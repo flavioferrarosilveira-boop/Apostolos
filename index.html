@@ -337,380 +337,6 @@
   .gem{width:42px;height:42px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 50% 35%,#4A3010,#1E1608);border:2px solid var(--ouro);display:flex;align-items:center;justify-content:center;}
   .gem svg{width:64%;height:64%;}
   .glabel .t b{font-family:'Cinzel';font-size:1.08rem;color:var(--pedra);font-weight:600;display:block;line-height:1.1;}
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:'EB Garamond',Georgia,serif;
-    color:var(--tinta);
-    background:var(--pergaminho);
-    background-image:
-      radial-gradient(circle at 18% -10%, rgba(184,144,47,.07), transparent 40%),
-      radial-gradient(circle at 90% 0%, rgba(47,111,106,.06), transparent 38%);
-    font-size:19px;
-    line-height:1.68;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.12;margin:0;}
-  a{color:inherit;}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;}
-  .eyebrow{
-    font-family:'Cormorant Garamond',serif;
-    text-transform:uppercase;letter-spacing:.34em;font-size:.72rem;font-weight:600;
-    color:var(--ouro);
-  }
-  .rule{height:1px;background:linear-gradient(90deg,transparent,var(--ouro),transparent);border:0;margin:0;}
-
-  /* ====== HEADER / NAV ====== */
-  header.site{
-    position:sticky;top:0;z-index:50;
-    background:linear-gradient(180deg,#1b2647,#1e2a52);
-    color:#f3ecdb;
-    border-bottom:2px solid var(--ouro);
-    box-shadow:0 6px 22px rgba(20,28,56,.28);
-  }
-  .topbar{display:flex;align-items:center;gap:18px;height:64px;}
-  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#f3ecdb;flex-shrink:0;}
-  .brand .seal{flex-shrink:0;}
-  .brand .bt{display:flex;flex-direction:column;line-height:1;}
-  .brand .bt b{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:600;letter-spacing:.01em;}
-  .brand .bt span{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ouro-claro);margin-top:3px;}
-  .topnav{margin-left:auto;display:flex;gap:4px;}
-  .topnav a{
-    text-decoration:none;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;
-    color:#cdd3e6;padding:8px 12px;border-radius:6px;transition:.18s;font-family:'Cormorant Garamond',serif;font-weight:600;
-  }
-  .topnav a:hover,.topnav a.on{color:#fff;background:rgba(255,255,255,.08);}
-  .burger{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.3);color:#f3ecdb;border-radius:7px;padding:7px 10px;font-size:1rem;cursor:pointer;}
-
-  /* apostle bar */
-  .apbar-wrap{background:rgba(255,255,255,.045);border-top:1px solid rgba(216,180,84,.22);}
-  .apbar{display:flex;gap:6px;overflow-x:auto;padding:9px 0;scrollbar-width:thin;}
-  .apbar::-webkit-scrollbar{height:5px;}
-  .apbar::-webkit-scrollbar-thumb{background:rgba(216,180,84,.4);border-radius:4px;}
-  .chip{
-    flex-shrink:0;text-decoration:none;cursor:pointer;border:none;background:none;
-    font-family:'EB Garamond',serif;font-size:.94rem;color:#d7dcec;
-    padding:6px 14px;border-radius:20px;white-space:nowrap;transition:.16s;border:1px solid transparent;
-  }
-  .chip:hover{color:#fff;background:rgba(255,255,255,.08);}
-  .chip.on{color:#1e2a52;background:var(--ouro-claro);border-color:var(--ouro);font-weight:500;}
-
-  /* ====== VIEWS ====== */
-  main{min-height:60vh;}
-  .view{display:none;animation:rise .5s ease both;}
-  .view.active{display:block;}
-  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
-  section.block{padding:54px 0;}
-
-  /* ====== HERO ====== */
-  .hero{position:relative;padding:62px 0 30px;text-align:center;}
-  .hero .eyebrow{display:block;margin-bottom:18px;}
-  .hero h1{font-size:clamp(2.6rem,6.4vw,4.6rem);color:var(--lapis);letter-spacing:.005em;}
-  .hero h1 em{font-style:italic;color:var(--ouro);font-weight:500;}
-  .hero .sub{
-    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--mar);
-    margin-top:6px;
-  }
-  .hero .lede{max-width:680px;margin:24px auto 0;color:var(--tinta-suave);font-size:1.12rem;}
-  .hero .cite{margin-top:26px;font-style:italic;color:var(--tinta-suave);font-size:1.02rem;}
-  .hero .cite small{display:block;font-style:normal;letter-spacing:.16em;text-transform:uppercase;font-size:.66rem;color:var(--ouro);margin-top:8px;}
-
-  /* origin map */
-  .mapcard{
-    margin:42px auto 0;max-width:760px;background:var(--carta);border:1px solid var(--linha);
-    border-radius:14px;box-shadow:var(--sombra);padding:26px 26px 18px;
-  }
-  .mapcard h3{font-size:1.6rem;color:var(--lapis);text-align:center;}
-  .mapcard p.k{text-align:center;color:var(--tinta-suave);font-size:.98rem;margin:4px 0 14px;}
-  .mapsvg{width:100%;height:auto;display:block;}
-  .holyfull{max-width:472px;margin:0 auto;}
-  .legend{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-top:12px;font-size:.86rem;color:var(--tinta-suave);}
-  .legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
-
-  /* ====== APOSTLE GRID (in início) ====== */
-  .grid-title{text-align:center;margin-bottom:8px;}
-  .grid-title h2{font-size:2.4rem;color:var(--lapis);}
-  .grid-title p{color:var(--tinta-suave);margin-top:6px;}
-  .apgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px;}
-  .apcard{
-    background:var(--carta);border:1px solid var(--linha);border-radius:14px;padding:22px 16px;
-    text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:.2s;box-shadow:var(--sombra);
-    display:flex;flex-direction:column;align-items:center;
-  }
-  .apcard:hover{transform:translateY(-4px);border-color:var(--ouro);box-shadow:0 16px 34px rgba(30,42,82,.13);}
-  .apcard .nm{font-family:'Cormorant Garamond',serif;font-size:1.34rem;font-weight:600;color:var(--lapis);margin-top:12px;}
-  .apcard .ep{font-style:italic;color:var(--mar);font-size:.95rem;}
-  .apcard .org{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);margin-top:8px;}
-
-  /* medallion */
-  .medal{width:78px;height:78px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#27356a,#1a2447);
-    border:2px solid var(--ouro);display:flex;align-items:center;justify-content:center;
-    box-shadow:inset 0 0 0 4px rgba(216,180,84,.16);}
-  .medal.lg{width:128px;height:128px;border-width:3px;}
-  .medal svg{width:54%;height:54%;}
-  .medal.lg svg{width:52%;height:52%;}
-
-  /* portrait faces */
-  .face{width:84px;height:84px;border-radius:50%;overflow:hidden;flex-shrink:0;
-    border:2px solid var(--ouro);box-shadow:inset 0 0 0 4px rgba(216,180,84,.18),var(--sombra);
-    background:radial-gradient(circle at 50% 32%,#2b3a72,#161f3c);}
-  .face.lg{width:134px;height:134px;border-width:3px;}
-  .face svg{display:block;width:100%;height:100%;}
-
-  /* ====== richer genealogy tree ====== */
-  .ftree{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:2px;}
-  .fcouple{display:flex;align-items:flex-start;gap:0;}
-  .fperson{display:flex;flex-direction:column;align-items:center;width:96px;}
-  .favatar{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 50% 32%,#2b3a72,#171f3a);
-    border:2px solid var(--ouro);display:flex;align-items:center;justify-content:center;overflow:hidden;}
-  .favatar svg{width:100%;height:100%;}
-  .favatar.unk{background:var(--pergaminho-2);border-style:dashed;border-color:var(--linha);
-    color:var(--tinta-suave);font-family:'Cormorant Garamond';font-size:1.5rem;}
-  .fperson span{margin-top:7px;font-family:'Cormorant Garamond';font-size:1rem;color:var(--lapis);line-height:1.15;}
-  .fperson span.r{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);}
-  .fbond{align-self:center;margin:0 2px;color:var(--ouro);font-size:1.3rem;position:relative;top:-12px;}
-  .fdrop{width:2px;height:26px;background:linear-gradient(var(--ouro),var(--lapis-2));margin:2px 0;}
-  .fself{display:flex;flex-direction:column;align-items:center;
-    background:var(--lapis);border:2px solid var(--ouro);border-radius:16px;padding:12px 22px;
-    box-shadow:0 8px 20px rgba(30,42,82,.25);}
-  .fself .face{width:62px;height:62px;border-width:2px;}
-  .fself b{color:#f3ecdb;font-family:'Cormorant Garamond';font-size:1.16rem;font-weight:600;margin-top:8px;}
-  .fsiblabel{margin:20px 0 10px;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro);}
-  .fsibs{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
-  .fsib{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--linha);
-    border-radius:30px;padding:6px 16px 6px 7px;}
-  .fsib .ic{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#2b3a72,#171f3a);
-    display:flex;align-items:center;justify-content:center;}
-  .fsib .ic svg{width:62%;height:62%;}
-  .fsib span{font-family:'Cormorant Garamond';color:var(--mar);font-size:1rem;}
-
-  /* ====== engraved (rasurada) death art ====== */
-  .engraving{display:flex;align-items:center;gap:20px;flex-wrap:wrap;
-    background:#efe7d2;border:1px solid var(--linha);border-radius:12px;padding:16px 20px;margin-bottom:16px;
-    box-shadow:inset 0 0 0 1px rgba(184,144,47,.25);}
-  .engraving .plate{width:108px;height:108px;flex-shrink:0;background:#f4eedb;border:1px solid #cbbd97;
-    border-radius:8px;box-shadow:inset 0 0 14px rgba(90,70,30,.12);}
-  .engraving .plate svg{width:100%;height:100%;display:block;}
-  .engraving .meta{flex:1;min-width:160px;}
-  .engraving .meta .k{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro);}
-  .engraving .meta b{display:block;font-family:'Cormorant Garamond';font-size:1.7rem;color:var(--lapis);line-height:1.1;margin-top:2px;}
-  /* martyrdom grid plates */
-  .mplate{width:74px;height:74px;flex-shrink:0;background:#f4eedb;border:1px solid #cbbd97;border-radius:8px;}
-  .mplate svg{width:100%;height:100%;display:block;}
-
-  /* map captions + route legend */
-  .mapcaption{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin:4px 0 14px;}
-  .mapcaption .k{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro);}
-  .mapcaption b{font-family:'Cormorant Garamond';font-size:1.5rem;color:var(--lapis);line-height:1;}
-  .mapcaption em{font-style:italic;color:var(--mar);}
-  .mapsvg{border-radius:10px;box-shadow:var(--sombra);}
-  .routelegend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:.86rem;color:var(--tinta-suave);}
-  .routelegend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
-  .preg-list{display:flex;flex-direction:column;gap:22px;}
-
-  /* ====== APOSTLE DETAIL ====== */
-  .ap-head{display:flex;align-items:center;gap:26px;flex-wrap:wrap;padding:46px 0 8px;}
-  .ap-head .txt{flex:1;min-width:240px;}
-  .ap-head .num{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:.3em;color:var(--ouro);text-transform:uppercase;}
-  .ap-head h1{font-size:clamp(2.4rem,6vw,3.8rem);color:var(--lapis);margin-top:4px;}
-  .ap-head h1 em{font-style:italic;color:var(--mar);font-weight:500;font-size:.62em;display:block;}
-  .ap-head .where{margin-top:10px;font-size:1.05rem;color:var(--tinta-suave);}
-  .ap-head .where b{color:var(--lapis);font-weight:600;}
-
-  .panels{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px;}
-  .panel{background:var(--carta);border:1px solid var(--linha);border-radius:14px;padding:24px 26px;box-shadow:var(--sombra);}
-  .panel.full{grid-column:1/-1;}
-  .panel h3{font-size:1.7rem;color:var(--lapis);display:flex;align-items:baseline;gap:12px;}
-  .panel h3 .ix{font-family:'Cormorant Garamond';font-size:.86rem;letter-spacing:.2em;color:var(--ouro);text-transform:uppercase;}
-  .panel .rule{margin:14px 0 18px;}
-
-  blockquote.q{margin:0 0 18px;padding:2px 0 2px 18px;border-left:3px solid var(--ouro-claro);}
-  blockquote.q:last-child{margin-bottom:0;}
-  blockquote.q p{margin:0;font-style:italic;color:#3a352b;}
-  blockquote.q cite{display:block;font-style:normal;margin-top:7px;font-size:.78rem;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--ouro);}
-
-  /* passagens bíblicas */
-  .verses{display:grid;grid-template-columns:1fr 1fr;gap:2px 30px;}
-  .verse{border-left:3px solid var(--ouro-claro);padding:2px 0 12px 15px;margin-bottom:10px;break-inside:avoid;}
-  .verse .ref{display:block;font-family:'Cormorant Garamond';font-weight:600;color:var(--lapis);font-size:1.06rem;}
-  .verse p{margin:2px 0 0;color:#3a352b;font-style:italic;font-size:.98rem;}
-  @media(max-width:760px){ .verses{grid-template-columns:1fr;} }
-
-  /* genealogy tree */
-  .tree{display:flex;flex-direction:column;align-items:center;gap:0;padding-top:4px;}
-  .tnode{background:#fff;border:1.5px solid var(--lapis-2);border-radius:24px;padding:7px 18px;
-    font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--lapis);min-width:84px;text-align:center;}
-  .tnode.unk{color:var(--tinta-suave);border-color:var(--linha);border-style:dashed;font-style:italic;}
-  .tnode.self{background:var(--lapis);color:#f3ecdb;border-color:var(--ouro);}
-  .trow{display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .tconn{width:2px;height:22px;background:var(--lapis-2);}
-  .tsibs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px;}
-  .tsibs .tnode{font-size:.92rem;border-color:var(--mar);color:var(--mar);}
-  .tlabel{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin-bottom:8px;text-align:center;}
-
-  /* death tag */
-  .deathtag{display:inline-flex;align-items:center;gap:9px;background:var(--pergaminho-2);
-    border:1px solid var(--linha);border-radius:30px;padding:6px 16px 6px 8px;margin-bottom:14px;}
-  .deathtag .dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;}
-  .deathtag .dl{font-family:'Cormorant Garamond';font-weight:600;color:var(--lapis);}
-  .resumo{margin:0 0 16px;color:var(--tinta-suave);}
-
-  /* long manuscript text */
-  .scroll-text{max-width:680px;margin:0 auto;}
-  .scroll-text h3{text-align:center;font-size:2rem;}
-  .scroll-text .src{text-align:center;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin:6px 0 22px;}
-  .scroll-text p{margin:0 0 16px;text-align:justify;}
-  .scroll-text p:first-of-type::first-letter{
-    font-family:'Cormorant Garamond',serif;font-size:3.4rem;line-height:.8;float:left;color:var(--ouro);
-    padding:6px 10px 0 0;font-weight:700;
-  }
-  .dialog{color:var(--lapis-2);}
-
-  .backlink{display:inline-flex;align-items:center;gap:8px;margin-top:36px;text-decoration:none;
-    font-family:'Cormorant Garamond';font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.84rem;
-    color:var(--mar);cursor:pointer;}
-  .backlink:hover{color:var(--lapis);}
-
-  /* generic content sections */
-  .section-head{text-align:center;max-width:680px;margin:0 auto 36px;}
-  .section-head h2{font-size:clamp(2.2rem,5vw,3.2rem);color:var(--lapis);}
-  .section-head .eyebrow{display:block;margin-bottom:14px;}
-  .section-head p{color:var(--tinta-suave);margin-top:10px;}
-
-  .circles{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-  .circle{background:var(--carta);border:1px solid var(--linha);border-radius:14px;padding:26px;box-shadow:var(--sombra);}
-  .circle .rk{font-family:'Cormorant Garamond';font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ouro);}
-  .circle h3{font-size:1.7rem;color:var(--lapis);margin:6px 0 12px;}
-  .circle p{margin:0;color:var(--tinta-suave);font-size:1.02rem;}
-
-  /* essay / contexto */
-  .essay{max-width:730px;margin:0 auto;}
-  .essay section{margin-top:40px;}
-  .essay h3{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--lapis);font-weight:600;margin:0 0 4px;}
-  .essay .se{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro);}
-  .essay hr.rule{margin:12px 0 18px;}
-  .essay p{margin:0 0 15px;text-align:justify;color:#332f27;}
-  .essay blockquote.q{margin:0 0 16px;}
-
-  /* linha do tempo */
-  .tl{position:relative;max-width:820px;margin:0 auto;}
-  .tl::before{content:'';position:absolute;left:108px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--ouro),var(--linha));}
-  .tl-item{position:relative;display:grid;grid-template-columns:100px 1fr;gap:32px;margin-bottom:18px;}
-  .tl-year{text-align:right;font-family:'Cormorant Garamond';font-weight:700;color:var(--lapis);font-size:1.14rem;line-height:1.05;padding-top:2px;}
-  .tl-dot{position:absolute;left:103px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--ouro);box-shadow:0 0 0 3px var(--pergaminho);}
-  .tl-body{background:var(--carta);border:1px solid var(--linha);border-radius:12px;padding:11px 18px;box-shadow:var(--sombra);}
-  .tl-body b{font-family:'Cormorant Garamond';font-size:1.2rem;color:var(--lapis);font-weight:600;}
-  .tl-body p{margin:3px 0 0;color:var(--tinta-suave);font-size:.97rem;}
-  @media(max-width:600px){
-    .tl::before{left:7px;}
-    .tl-item{grid-template-columns:1fr;gap:4px;padding-left:30px;}
-    .tl-year{text-align:left;}
-    .tl-dot{left:2px;}
-  }
-
-  /* árvore de Herodes */
-  .herod{max-width:900px;margin:0 auto;text-align:center;}
-  .hcouple{display:flex;align-items:stretch;justify-content:center;gap:12px;flex-wrap:wrap;}
-  .hnode{background:var(--lapis);color:#f3ecdb;border:2px solid var(--ouro);border-radius:14px;padding:10px 22px;display:inline-block;}
-  .hnode.sp{background:#fff;color:var(--lapis);}
-  .hnode .nm{font-family:'Cormorant Garamond';font-size:1.22rem;font-weight:600;}
-  .hnode .rl{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro-claro);margin-bottom:2px;}
-  .hnode.sp .rl{color:var(--ouro);}
-  .hdrop{width:2px;height:22px;background:var(--ouro);margin:5px auto;}
-  .hkids{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:4px;}
-  .hkid{width:210px;background:var(--carta);border:1px solid var(--linha);border-radius:12px;padding:14px;box-shadow:var(--sombra);text-align:left;}
-  .hkid .nm{font-family:'Cormorant Garamond';font-size:1.14rem;font-weight:600;color:var(--lapis);}
-  .hkid .rl{font-size:.9rem;color:var(--mar);margin-top:3px;}
-  .hkid .fate{display:inline-block;margin-top:9px;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;}
-  .fate-heir{background:#e7edf7;color:#33599b;}
-  .fate-dead{background:#f3e2df;color:#7a2e2e;}
-  .fate-out{background:#efe7d2;color:#8a6d1f;}
-  .tetlegend{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:14px;font-size:.92rem;color:var(--tinta-suave);}
-  .tetlegend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:7px;vertical-align:-1px;}
-
-  /* diagrama dos Evangelhos */
-  .gospels{background:var(--carta);border:1px solid var(--linha);border-radius:14px;padding:26px 28px;box-shadow:var(--sombra);max-width:920px;margin:0 auto;}
-  .gospels .gh{text-align:center;margin-bottom:20px;}
-  .gospels .gh .eyebrow{display:block;margin-bottom:10px;}
-  .gospels .gh h3{font-family:'Cormorant Garamond';font-size:2rem;color:var(--lapis);font-weight:600;}
-  .gospels .gh p{color:var(--tinta-suave);margin:8px auto 0;max-width:600px;font-size:1rem;}
-  .grow{display:grid;grid-template-columns:176px 1fr 184px;gap:16px;align-items:center;margin-bottom:13px;}
-  .gaxis{margin-bottom:10px;}
-  .gticks{position:relative;height:18px;border-bottom:1.5px solid var(--linha);}
-  .gticks span{position:absolute;transform:translateX(-50%);bottom:3px;font-size:.74rem;color:var(--ouro);font-family:'Cormorant Garamond';font-weight:600;}
-  .gticks span::after{content:'';position:absolute;left:50%;bottom:-6px;width:1px;height:5px;background:var(--linha);}
-  .glabel{display:flex;align-items:center;gap:11px;}
-  .gem{width:42px;height:42px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 50% 35%,#27356a,#1a2447);border:2px solid var(--ouro);display:flex;align-items:center;justify-content:center;}
-  .gem svg{width:64%;height:64%;}
-  .glabel .t b{font-family:'Cormorant Garamond';font-size:1.14rem;color:var(--lapis);font-weight:600;display:block;line-height:1.1;}
-  .glabel .t .sym{font-size:.8rem;color:var(--ouro);font-style:italic;}
-  .gtrack{position:relative;height:26px;background:var(--papiro-2);border-radius:2px;}
-  .gbar{position:absolute;top:0;height:26px;border-radius:2px;min-width:16px;display:flex;align-items:center;justify-content:center;
-    color:#fff;font-size:.78rem;font-family:'Cinzel';font-weight:600;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);}
-  .gnote{font-size:.86rem;color:var(--tinta-suave);line-height:1.25;}
-  @media(max-width:760px){
-    .grow{grid-template-columns:1fr;gap:5px;margin-bottom:18px;}
-    .gaxis{display:none;}
-    .gtrack{height:14px;}
-    .gbar{height:14px;font-size:0;}
-  }
-
-  .names-list{counter-reset:nm;list-style:none;padding:0;margin:0;max-width:760px;margin-inline:auto;}
-  .names-list li{counter-increment:nm;background:var(--argila);border:1px solid var(--areia);border-radius:3px;
-    padding:16px 22px 16px 64px;margin-bottom:12px;position:relative;box-shadow:var(--sombra);}
-  .names-list li::before{content:counter(nm);position:absolute;left:16px;top:50%;transform:translateY(-50%);
-    width:34px;height:34px;border-radius:50%;background:var(--pedra);color:var(--ouro-claro);
-    display:flex;align-items:center;justify-content:center;font-family:'Cinzel';font-weight:600;font-size:1.1rem;}
-  .names-list b{font-family:'Cinzel';font-size:1.2rem;color:var(--pedra);font-weight:600;}
-  .names-list span{color:var(--tinta-suave);font-size:.98rem;}
-
-  .marty{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
-  .mgroup{background:var(--argila);border:1px solid var(--areia);border-radius:3px;padding:22px 24px;box-shadow:var(--sombra-pedra);}
-  .mgroup .mh{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
-  .mgroup .mh .dot{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;}
-  .mgroup .mh b{font-family:'Cinzel';font-size:1.32rem;color:var(--pedra);font-weight:600;}
-  .mgroup .mn{display:flex;flex-wrap:wrap;gap:8px;}
-  .mgroup .mn span{background:var(--papiro-2);border:1px solid var(--linha);border-radius:2px;padding:4px 13px;font-size:.92rem;color:var(--pedra);}
-
-  /* footer — pedra tumular */
-  footer{
-    background:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E"),
-      linear-gradient(180deg,#2A1E08,#1A1006);
-    color:#C8A86B;margin-top:60px;
-    border-top:4px solid transparent;
-    border-image:linear-gradient(90deg,transparent,#C4943A 20%,#D4A84B 50%,#C4943A 80%,transparent) 1;
-    padding:46px 0 40px;text-align:center;
-  }
-  footer::before{content:'⸻ ✦ ⸻';display:block;color:var(--ouro);font-size:1.1rem;letter-spacing:.4em;margin-bottom:20px;opacity:.6;}
-  footer .seal{margin:0 auto 16px;}
-  footer h4{font-family:'Cinzel';font-size:1.4rem;color:#F2E4B8;font-weight:600;letter-spacing:.06em;}
-  footer p{margin:8px auto 0;max-width:560px;font-size:.94rem;color:#9A8060;line-height:1.7;}
-  footer .by{margin-top:18px;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro-claro);}
-
-  /* responsive */
-  @media(max-width:900px){
-    .apgrid{grid-template-columns:repeat(2,1fr);}
-    .panels{grid-template-columns:1fr;}
-    .circles{grid-template-columns:1fr;}
-    .marty{grid-template-columns:1fr;}
-  }
-  @media(max-width:680px){
-    body{font-size:18px;}
-    .topnav{display:none;}
-    .topnav.open{display:flex;position:absolute;top:64px;right:0;left:0;flex-direction:column;
-      background:#1A1006;border-top:1px solid rgba(196,148,58,.3);padding:10px 22px 16px;gap:2px;}
-    .topnav.open a{padding:11px 8px;border-radius:3px;}
-    .burger{display:block;}
-    .apgrid{grid-template-columns:1fr 1fr;gap:12px;}
-    .apcard{padding:16px 8px;}
-    .ap-head{padding-top:34px;}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *{animation:none!important;scroll-behavior:auto!important;}
-  }
 </style>
 </head>
 <body>
@@ -759,9 +385,10 @@
       <circle cx="16" cy="20" r="1.5" fill="#D4A84B"/>
     </svg>
   </span>
-  <h4>Síntese dos Apóstolos segundo o Espiritismo</h4>
+  <h4>Síntese dos Apóstolos</h4>
+  <h4 style="color:var(--ouro);margin-top:4px;">segundo o Espiritismo</h4>
   <p>Compilação de informações sobre os apóstolos extraídas de obras espíritas — Humberto de Campos e Emmanuel (por Chico Xavier), Amélia Rodrigues (por Divaldo Franco), entre outros — complementada por fontes bíblicas e históricas.</p>
-  <div class="by">Organização: Flávio Antônio Ferraro da Silveira · 2020</div>
+  <div class="by">Organização: Flávio Antônio Ferraro da Silveira · 2026</div>
 </footer>
 
 <script>
@@ -1101,18 +728,52 @@ const APS = [
     {t:'No ano 90 d.C., em razão dos feitos extraordinários, Bartolomeu foi crucificado com Felipe, sobrevivendo à perseguição inclemente.', s:'Vivendo com Jesus, cap. 19 — Amélia Rodrigues / Divaldo Franco'}
   ]
 },
-{ id:'bartolomeu', nome:'Bartolomeu', ep:'Natanael — filho de Talmay', icon:'knife',
-  origem:{cidade:'Caná', regiao:'Galileia'}, death:'cruz',
+{ id:’bartolomeu’, nome:’Bartolomeu’, ep:’Natanael — filho de Talmay’, icon:’knife’,
+  origem:{cidade:’Caná’, regiao:’Galileia’}, death:’cruz’,
   nascimento:[
-    {t:'Natanael ou Bartolomeu, filho de Ptolomeu, provinha de Caná.', s:'Luz do Mundo, cap. 4 — Amélia Rodrigues / Divaldo Franco'},
-    {t:'Bartolomeu (seu nome se origina de “bar Talmay”, em aramaico, filho de Talmay), igualmente galileu de Nazaré, discreto e afável… É possível que seja o mesmo Natanael a que se referem as Escrituras.', s:'Vivendo com Jesus, cap. 19 — Amélia Rodrigues / Divaldo Franco'},
-    {t:'Ao ser procurado por Bartolomeu, Jesus disse a seu respeito: “Eis um verdadeiro israelita, em quem não há fraude” (João 1:47). Era um homem verdadeiro.', s:'Informações complementares (fontes bíblicas e históricas)'}
+    {t:’Natanael ou Bartolomeu, filho de Ptolomeu, provinha de Caná.’, s:’Luz do Mundo, cap. 4 — Amélia Rodrigues / Divaldo Franco’},
+    {t:’Bartolomeu (seu nome se origina de “bar Talmay”, em aramaico, filho de Talmay), igualmente galileu de Nazaré, discreto e afável… É possível que seja o mesmo Natanael a que se referem as Escrituras.’, s:’Vivendo com Jesus, cap. 19 — Amélia Rodrigues / Divaldo Franco’},
+    {t:’Ao ser procurado por Bartolomeu, Jesus disse a seu respeito: “Eis um verdadeiro israelita, em quem não há fraude” (João 1:47). Era um homem verdadeiro.’, s:’Informações complementares (fontes bíblicas e históricas)’}
   ],
-  gen:{pai:'Ptolomeu', mae:null, irmaos:[]},
-  morte:'Bartolomeu serviu como missionário na Ásia Menor, em Hierápolis e na Armênia — primeira nação a proclamar-se oficialmente cristã. Na cidade de Albana sofreu martírio: foi escalpelado vivo e crucificado de cabeça para baixo, no ano 68 d.C.',
+  gen:{pai:’Ptolomeu’, mae:null, irmaos:[]},
+  texto:`<p>Nessa singela Caná, que se fará cantada em poemas, versos e histórias incomparáveis, nasceu Bartolomeu, também conhecido por Natanael.</p>
+<p>Ele se tornou um discípulo de Jesus dos mais estimados.</p>
+<p>Bartolomeu é sobrenome hebraico que corresponde a <em>Filho de Tolmai</em>, enquanto seu nome, que é Natanael, significa <em>Deus deu</em>, ficando, portanto, denominado como <em>Natanael bar Tolmai</em>.</p>
+<p>Os livros do Novo Testamento referem-se-lhe poucas vezes, porém, o suficiente para saber-se que era de caráter nobre e introspectivo, silencioso como quem busca algo que deseja com afinco e a tal se dedica com acendrado interesse.</p>
+<p>Tinha por hábito consultar os <em>Escritos Sagrados</em>, o que sempre fazia à sombra das figueiras que lhe cercavam a casa modesta.</p>
+<p>O seu relacionamento com Filipe, outro apóstolo de Jesus, era constante e nobre, pois que estavam sempre juntos, quando dialogavam sobre aquela expectativa que a ambos afligia, por isso era um israelita sem dolo…</p>
+<p>Naquela época uma voz procedia do deserto conclamando à penitência, pois que o <em>Reino</em> estava próximo de ser edificado e o <em>Messias</em> já se encontrava na Terra, preparando-o.</p>
+<p>João (Yocanaan) fizera-se conhecido pela sua pregação e pelo hábito de batizar aqueles que se arrependiam dos erros e necessitavam de uma nova oportunidade para serem felizes.</p>
+<p>A sua voz poderosa e a aparência especial, austera e sem retoques, arrebatavam multidões que tinham sede de paz e vida.</p>
+<p>De preferência, fazia-o às margens do Rio Jordão, unindo o povo ante as águas abençoadas e purificadoras.</p>
+<p>Ele apresentava os ensinamentos essênios sobre a coragem e a fé, a conduta e a abnegação, a castidade moral e a fidelidade aos deveres, e somente habitariam a Terra os portadores de tais requisitos.</p>
+<p>Os dois amigos haviam-no escutado e estavam realmente comovidos com a mensagem que lhes banhava a alma de santas emoções.</p>
+<p>Filipe, porém, ouvira antes Jesus e ficara fascinado. Tudo n’Ele era especial e incomum. Suas palavras eram pérolas luminosas que abrilhantavam o coração.</p>
+<p>Falou a Natanael a Seu respeito, exatamente quando Ele o convidou a fazer parte do grupo que estava sendo organizado.</p>
+<p class=”dialog”>— <em>Vinde, Natanael! Eu vos vi à sombra da figueira meditando…</em></p>
+<p>E logo acrescentou:</p>
+<p class=”dialog”>— <em>Este é um israelita sem dolo.</em></p>
+<p>A referência especial era de grande magnitude, porquanto não bastava ser israelita e muitos não faziam jus à denominação, em razão do caráter reprochável ou preconceituoso. Era aberto à luz que o clareava interiormente.</p>
+<p>Surpreso favoravelmente, ele não pôde negar que havia encontrado o que tanto buscava, Aquele Enviado, Filho do Altíssimo.</p>
+<p>Totalmente tocado pela Sua beleza e Mensagem desde aquele momento, entregou-se-Lhe em regime de totalidade.</p>
+<p>A partir de então, discreto e diligente, sempre esteve ao lado do amado Rabi.</p>
+<p>Viveu com Ele os dias ásperos, as noites frias e angustiantes, as horas decisivas e os horrores em Jerusalém, e, depois da Sua morte na cruz vergonhosa e perversa, fez parte da inolvidável madrugada em que pescavam ao retornarem à Galileia e participara do encantamento do Seu poder, orientando para que lado se deveria atirar as redes…</p>
+<p>Igualmente com Filipe participou do encontro dos quinhentos naquela tarde inolvidável em que João falava sobre Ele, e todos O viram, ouviram-nO e choraram de emoção ante as orientações que deram àqueles quinhentos na Galileia formosa e amada, a fim de que saíssem pelo mundo a divulgar a Verdade, oferecendo a própria vida, conforme Ele o fizera.</p>
+<p>Nunca, em momento algum, esquecê-lO-ia ou deixaria de cumprir o seu dever de semear a alegria do <em>Reino</em> até o instante final, no grandioso testemunho.</p>
+<p>A modesta Caná, onde Ele operou o fenômeno com água em sabor de vinho e a tornara famosa pelos tempos do futuro, também o ofereceu à Humanidade como exemplo ímpar de fidelidade e amor.</p>
+<p>Afirmam uns que ele foi atirado ao mar em um saco com pedras, outros comentam que ele foi crucificado após pregar na Índia e em diferentes lugares, ensinando a viver-se em liberdade e plenitude.</p>
+<hr class=”rule” style=”margin:28px 0 20px;”>
+<p class=”dialog” style=”text-align:center;font-size:1.08rem;”>Como é a vossa fé no Messias?</p>
+<p class=”dialog”>Mascarais aparências e comportamentos que não condizem com a vossa realidade íntima?</p>
+<p class=”dialog”>Nestes aflitivos dias de alucinação e criminalidade de todo tipo, deserções vergonhosas e covardes em relação aos compromissos com Jesus, recordai-vos de Natanael e vivei desde agora o <em>Reino de Deus</em> com toda a vossa complexidade e beleza.</p>
+<p class=”dialog”>Antes de fugir pela porta do nada em busca de coisa nenhuma, recordai-vos de que Jesus vos ama exatamente como sois e espera que vos transformeis em uma carta viva do Seu Evangelho libertador.</p>
+<p class=”dialog”>Nada vos afaste d’Aquele que é Vida e pão da vida.</p>
+<p class=”dialog”>Tornai-vos um cristão verdadeiro em quem não haja dolo.</p>
+<p class=”dialog”>Sede fiéis ao compromisso, vivendo de acordo com os parâmetros da fé libertadora.</p>`,
+  morte:’Bartolomeu serviu como missionário na Ásia Menor, em Hierápolis e na Armênia — primeira nação a proclamar-se oficialmente cristã. Na cidade de Albana sofreu martírio: foi escalpelado vivo e crucificado de cabeça para baixo, no ano 68 d.C.’,
   morteq:[
-    {t:'Bartolomeu, ouvindo n’alma a musicalidade do amor, sofreu o martírio e morreu na cruz de cabeça para baixo, após ser esfolado vivo.', s:'Luz do Mundo, cap. 4 — Amélia Rodrigues / Divaldo Franco'},
-    {t:'Porque demorasse a morrer, foi esfolado vivo e depois escalpelado, dando a mais extraordinária demonstração de fé e de coragem, pregando sempre a doutrina do amor e do perdão.', s:'Vivendo com Jesus, cap. 19 — Amélia Rodrigues / Divaldo Franco'}
+    {t:’Bartolomeu, ouvindo n’alma a musicalidade do amor, sofreu o martírio e morreu na cruz de cabeça para baixo, após ser esfolado vivo.’, s:’Luz do Mundo, cap. 4 — Amélia Rodrigues / Divaldo Franco’},
+    {t:’Porque demorasse a morrer, foi esfolado vivo e depois escalpelado, dando a mais extraordinária demonstração de fé e de coragem, pregando sempre a doutrina do amor e do perdão.’, s:’Vivendo com Jesus, cap. 19 — Amélia Rodrigues / Divaldo Franco’}
   ]
 },
 { id:'mateus', nome:'Mateus', ep:'Levi — o publicano, dom de Iahweh', icon:'book',
@@ -1323,9 +984,7 @@ function apostleView(a){
   const longtext = a.texto ? `
     <section class="block"><div class="wrap"><hr class="rule" style="max-width:120px;margin:0 auto 40px">
       <div class="scroll-text">
-        <h3>${a.texto.titulo}</h3>
-        <p class="src">${a.texto.src}</p>
-        ${a.texto.paras.map(p=>`<p>${p}</p>`).join('')}
+        ${typeof a.texto === 'string' ? a.texto : `<h3>${a.texto.titulo}</h3><p class="src">${a.texto.src}</p>${a.texto.paras.map(p=>`<p>${p}</p>`).join('')}`}
       </div>
     </div></section>` : '';
   a.gen._self=a.nome; a.gen._id=a.id;
