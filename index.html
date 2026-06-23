@@ -1976,7 +1976,12 @@ function autoresView(){
       ],
       nota:'Em 21 de novembro de 1962, durante conferência em Buenos Aires, Divaldo Franco recebeu o célebre <em>Poema da Gratidão</em>, atribuído ao espírito de Amélia Rodrigues — uma das peças mais recitadas no movimento espírita brasileiro.',
       obras:['Luz do Mundo','Há Flores no Caminho','Pelos Caminhos de Jesus','Até o Fim dos Tempos','Trigo de Deus','Primícias do Reino','O Semeador (infantil)','Sol de Esperança'],
-      foto:null,
+      foto:[
+        'https://upload.wikimedia.org/wikipedia/pt/4/47/Amelia_Rodrigues.jpg',
+        'https://upload.wikimedia.org/wikipedia/pt/d/d3/Amelia_Rodrigues_(escritora).jpg',
+        'https://uemmg.org.br/wp-content/uploads/amelia-rodrigues.jpg',
+        'https://psicologiajoannadeangelis.files.wordpress.com/amelia-rodrigues.jpg',
+      ],
       fonte:'FEB — Efeméride Amélia Rodrigues',
       fonteUrl:'https://www.febnet.org.br'
     },
@@ -2004,10 +2009,16 @@ function autoresView(){
   const cards=autores.map(a=>`
     <div class="autor-card">
       <div class="autor-aside">
-        ${a.foto
-          ? `<img class="autor-foto" src="${a.foto}" alt="${a.nome}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-             <div class="autor-avatar" style="display:none">${a.inicial}</div>`
-          : `<div class="autor-avatar">${a.inicial}</div>`}
+        ${(()=>{
+          if(!a.foto) return `<div class="autor-avatar">${a.inicial}</div>`;
+          const urls=Array.isArray(a.foto)?a.foto:[a.foto];
+          const fallback=`this.src=this.getAttribute('data-next')||'';if(!this.getAttribute('data-next')){this.style.display='none';this.nextElementSibling.style.display='flex';}`;
+          return `<img class="autor-foto" src="${urls[0]}"
+            data-next="${urls.slice(1).join('|')}"
+            alt="${a.nome}"
+            onerror="const nxt=this.getAttribute('data-next')||'';const parts=nxt.split('|').filter(Boolean);if(parts.length){this.src=parts[0];this.setAttribute('data-next',parts.slice(1).join('|'));}else{this.style.display='none';this.nextElementSibling.style.display='flex';}"
+          ><div class="autor-avatar" style="display:none">${a.inicial}</div>`;
+        })()}
         <div class="autor-meta">
           <h2>${a.nome}</h2>
           <div class="datas">${a.datas}</div>
