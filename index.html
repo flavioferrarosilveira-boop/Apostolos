@@ -334,109 +334,42 @@
   .glabel .t b{font-family:'Cinzel';font-size:1.08rem;color:var(--pedra);font-weight:600;display:block;line-height:1.1;}
 
   /* ====================================================
-     RESPONSIVO — mobile first
-     breakpoints: 900 | 680 | 420
+     RESPONSIVO — desktop → tablet (900) → mobile (680) → xs (420)
   ==================================================== */
 
-  /* ====== OS DOZE — grid de nomes ====== */
-  .names-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
-    counter-reset:apostle;margin-bottom:36px;
-  }
-  .name-card{
-    background:var(--argila);border:1px solid var(--areia);border-radius:4px;
-    padding:20px 18px;box-shadow:var(--sombra-pedra);
-    display:flex;flex-direction:column;gap:6px;
-    counter-increment:apostle;position:relative;
-    transition:transform .18s,box-shadow .18s;
-    cursor:pointer;text-decoration:none;color:inherit;
-  }
-  .name-card::before{
-    content:counter(apostle);
-    position:absolute;top:14px;right:16px;
-    font-family:'Cinzel Decorative',serif;font-size:1.5rem;font-weight:700;
-    color:var(--ouro);opacity:.35;line-height:1;
-  }
-  .name-card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(28,16,4,.18);}
-  .name-card .nm{font-family:'Cinzel',serif;font-size:1.06rem;font-weight:700;color:var(--pedra);line-height:1.15;padding-right:28px;}
-  .name-card .etim{font-size:.82rem;color:var(--tinta-suave);font-style:italic;line-height:1.35;}
-  .name-card .tag{
-    display:inline-block;align-self:flex-start;
-    font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
-    font-family:'Cinzel',serif;color:var(--ouro);
-    border-top:1px solid var(--linha);padding-top:6px;margin-top:2px;width:100%;
-  }
-
-  /* ====== MARTÍRIOS — layout visual ====== */
-  .marty{
-    display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
-    margin-bottom:36px;
-  }
-  .mgroup{
-    background:var(--argila);border:1px solid var(--areia);border-radius:4px;
-    padding:18px 20px;box-shadow:var(--sombra-pedra);
-    display:flex;flex-direction:column;gap:12px;
-  }
-  .mh{display:flex;align-items:center;gap:14px;}
-  .mh-info{flex:1;}
-  .mh-info .mlabel{
-    font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.2em;
-    text-transform:uppercase;color:var(--ouro);
-  }
-  .mh-info b{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--pedra);display:block;margin-top:2px;}
-  .mplate{width:64px;height:64px;flex-shrink:0;
-    background:linear-gradient(145deg,#E0D0A8,#C8B882);
-    border:1px solid #B8A070;border-radius:4px;
-    box-shadow:inset 0 2px 5px rgba(90,60,10,.14),inset 0 -2px 3px rgba(255,255,255,.45);}
-  .mplate svg{width:100%;height:100%;display:block;}
-  .mn{display:flex;flex-wrap:wrap;gap:6px;}
-  .mn span{
-    background:var(--pedra);color:#E8D4A0;
-    font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.06em;
-    padding:4px 12px;border-radius:2px;border:1px solid rgba(196,148,58,.3);
-  }
-
-  /* ====== NAMES-LIST legado (mantido para compat) ====== */
-  .names-list{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:8px;}
-  .names-list li{
-    position:relative;padding:13px 18px 13px 58px;
-    background:var(--argila);border:1px solid var(--areia);border-radius:3px;
-    box-shadow:var(--sombra);counter-increment:names;
-  }
-  .names-list li::before{
-    content:counter(names);
-    position:absolute;left:12px;top:50%;transform:translateY(-50%);
-    width:28px;height:28px;border-radius:50%;
-    background:var(--pedra);color:var(--ouro-claro);
-    font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;
-    display:flex;align-items:center;justify-content:center;line-height:1;
-  }
-  .names-list{counter-reset:names;}
-  .names-list b{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--pedra);}
-  .names-list span{display:block;font-size:.92rem;color:var(--tinta-suave);font-style:italic;margin-top:2px;}
-
-
-  /* ---- 900px: tablets ---- */
+  /* ── 900px tablets ── */
   @media(max-width:900px){
+    /* grade de apóstolos */
     .apgrid{grid-template-columns:repeat(2,1fr);}
+    /* painéis de detalhe */
     .panels{grid-template-columns:1fr;}
     .panel.full{grid-column:1;}
+    /* círculos de contexto */
     .circles{grid-template-columns:1fr;}
+    /* martírios: 1 coluna */
     .marty{grid-template-columns:1fr;}
+    /* os doze: 2 colunas */
     .names-grid{grid-template-columns:repeat(2,1fr);}
+    /* autores: aside menor */
+    .autor-card{grid-template-columns:180px 1fr;}
+    .autor-aside{padding:24px 16px;}
+    .autor-foto,.autor-avatar{width:82px;height:82px;}
+    .autor-body{padding:24px 24px;}
+    /* evangelhos */
     .grow{grid-template-columns:1fr;gap:6px;margin-bottom:20px;}
     .gaxis{display:none;}
     .gtrack{height:18px;}
     .gospels{padding:20px 18px;}
+    /* herodes */
     .hkid{width:180px;}
     .hcouple{gap:8px;}
   }
 
-  /* ---- 680px: smartphones ---- */
+  /* ── 680px smartphones ── */
   @media(max-width:680px){
     body{font-size:17px;line-height:1.65;}
 
-    /* header — sticky com z-index alto para menu aberto */
+    /* header */
     header.site{position:sticky;top:0;z-index:200;}
     .topnav{display:none;}
     .topnav.open{
@@ -454,129 +387,129 @@
     .burger{display:block;}
 
     /* brand */
-    .brand .bt b{font-size:.98rem;}
-    .brand .bt span{font-size:.88rem;}
-
-    /* chip bar */
-    .apbar-wrap .wrap{padding:0 10px;}
-    .chip{font-size:.7rem;padding:4px 9px;}
+    .brand{gap:9px;}
+    .brand .seal svg{width:34px;height:34px;}
+    .brand .bt b,.brand .bt span{font-size:.96rem;}
 
     /* hero */
-    .hero{padding:36px 0 20px;}
-    .hero::before{letter-spacing:.2em;font-size:.85rem;}
-    .hero h1{font-size:clamp(1.8rem,7.5vw,2.8rem);}
-    .hero .sub{font-size:1.1rem;}
-    .hero .lede{font-size:.97rem;}
-    .hero .cite{font-size:.92rem;}
-    .mapcard{padding:16px 12px 12px;margin-top:24px;}
-    .mapcard::before,.mapcard::after{display:none;}
+    .hero h1{font-size:clamp(2rem,8vw,3rem);}
+    .hero .sub{font-size:1.15rem;}
+    .hero .lede{font-size:1.02rem;}
 
-    /* grids */
-    .apgrid{grid-template-columns:1fr 1fr;gap:10px;}
-    .apcard{padding:12px 8px;}
-    .apcard .nm{font-size:.98rem;}
-    .apcard .ep{font-size:.82rem;}
-    .medal{width:56px;height:56px;}
-    .medal.lg{width:96px;height:96px;}
+    /* bloco geral */
+    section.block{padding:44px 0;}
+    .section-head h2{font-size:2rem;}
 
-    /* detalhe apostolo */
-    .ap-head{padding-top:24px;gap:14px;flex-direction:column;align-items:flex-start;}
-    .face.lg{width:92px;height:92px;}
-    .ap-head h1{font-size:clamp(1.7rem,6.5vw,2.6rem);}
-    .ap-head .where{font-size:.95rem;}
+    /* apóstolos */
+    .apgrid{grid-template-columns:repeat(2,1fr);gap:10px;}
+    .apcard{padding:18px 12px 14px;}
+    .medal{width:60px;height:60px;}
 
-    /* paineis */
-    .panels{gap:12px;margin-top:16px;}
+    /* detalhe apóstolo */
+    .ap-head{gap:14px;}
+    .face.lg{width:84px;height:84px;}
+    .ap-head h1{font-size:clamp(1.8rem,6vw,2.6rem);}
+    .panels{gap:12px;}
     .panel{padding:16px 14px;}
-    .panel h3{font-size:1.22rem;}
 
-    /* passagens */
-    .verses{grid-template-columns:1fr;}
+    /* família */
+    .fsibs{flex-direction:column;align-items:center;}
+    .fperson{width:76px;}
+    .favatar{width:46px;height:46px;}
+    .fperson span{font-size:.82rem;}
 
-    /* genealogia */
-    .fcouple{flex-wrap:wrap;justify-content:center;gap:4px;}
-    .fperson{width:80px;}
-    .fsibs{gap:6px;}
-    .fsib{padding:5px 10px 5px 5px;}
-    .fsib span{font-size:.88rem;}
-
-    /* gravação/martirio */
-    .engraving{flex-direction:column;align-items:flex-start;gap:12px;}
-    .engraving .plate{width:74px;height:74px;}
-    .engraving .meta b{font-size:1.2rem;}
-
-    /* linha do tempo */
-    .tl::before{left:6px;}
-    .tl-item{grid-template-columns:1fr;gap:2px;padding-left:24px;}
-    .tl-year{text-align:left;font-size:.96rem;}
-    .tl-dot{left:1px;}
-    .tl-body{padding:9px 12px;}
-    .tl-body b{font-size:1.05rem;}
+    /* estela / gravura */
+    .engraving{gap:14px;padding:14px;}
+    .engraving .plate{width:72px;height:72px;}
+    .mplate{width:52px;height:52px;}
 
     /* herodes */
-    .hkids{gap:8px;}
-    .hkid{width:calc(50% - 4px);min-width:130px;padding:10px;}
-    .hkid .nm{font-size:.94rem;}
-    .hnode{padding:8px 14px;}
-    .hnode .nm{font-size:1rem;}
+    .hkid{width:100%;}
+    .hkids{gap:6px;}
+    .herod{overflow-x:auto;}
+
+    /* os doze */
+    .names-grid{grid-template-columns:1fr;}
+    .name-card{padding:16px 14px;}
+    .name-card::before{font-size:1.2rem;top:10px;right:12px;}
+    .name-card .nm{font-size:1rem;padding-right:24px;}
+    .name-card .etim{font-size:.8rem;}
+
+    /* martírios */
+    .marty{grid-template-columns:1fr;gap:12px;}
+    .mgroup{padding:14px 16px;}
+    .mplate{width:52px;height:52px;}
+    .mh-info b{font-size:1rem;}
+    .mn span{font-size:.7rem;padding:3px 9px;}
 
     /* evangelhos */
-    .gospels{padding:14px 12px;}
-    .gospels .gh h3{font-size:1.5rem;}
-    .grow{grid-template-columns:1fr;gap:4px;margin-bottom:14px;}
+    .gospels{padding:16px 14px;}
+    .grow{grid-template-columns:1fr;gap:5px;margin-bottom:18px;}
     .gaxis{display:none;}
-    .gtrack{height:12px;}
-    .gbar{height:12px;font-size:0;}
-    .glabel{gap:8px;}
-    .gem{width:34px;height:34px;}
-    .glabel .t b{font-size:.96rem;}
+    .gtrack{height:16px;}
+    .glabel .t b{font-size:.95rem;}
 
-    /* nomes */
-    .names-list li{padding:12px 14px 12px 50px;}
-    .names-list li::before{width:26px;height:26px;font-size:.9rem;left:10px;}
-    .names-list b{font-size:1.1rem;}
+    /* linha do tempo */
+    .tl::before{left:78px;}
+    .tl-item{grid-template-columns:72px 1fr;gap:20px;}
+    .tl-year{font-size:.9rem;}
+    .tl-dot{left:73px;}
+    .tl-body{padding:9px 14px;}
 
-    /* martirios */
-    .mgroup{padding:14px;}
-    .mgroup .mh .dot{width:32px;height:32px;}
-    .mgroup .mh b{font-size:1.1rem;}
-    .mgroup .mn span{font-size:.84rem;padding:3px 10px;}
-
-    /* secao */
-    .section-head h2{font-size:clamp(1.6rem,5.5vw,2.2rem);}
-    .section-head{margin-bottom:24px;}
-
-    /* circulos/contexto */
-    .circles{gap:12px;}
+    /* círculos */
+    .circles{grid-template-columns:1fr;gap:12px;}
     .circle{padding:18px 14px;}
     .circle h3{font-size:1.3rem;}
 
-    /* texto longo */
-    .scroll-text{padding:0 4px;}
-    .scroll-text p:first-of-type::first-letter{font-size:2.6rem;padding:4px 8px 0 0;}
+    /* mapa */
+    .mapsvg{border-radius:2px;}
+    .tetlegend{font-size:.82rem;gap:7px 14px;}
+    .routelegend{font-size:.8rem;}
 
-    /* essay */
-    .essay h3{font-size:1.5rem;}
+    /* autores */
+    .autor-card{grid-template-columns:1fr;}
+    .autor-aside{
+      flex-direction:row;flex-wrap:wrap;
+      padding:18px 16px;gap:14px;
+      justify-content:flex-start;align-items:center;
+    }
+    .autor-foto,.autor-avatar{width:68px;height:68px;}
+    .autor-avatar{font-size:1.5rem;}
+    .autor-meta{flex:1;text-align:left;}
+    .autor-meta h2{font-size:1rem;}
+    .autor-obras{width:100%;margin-top:6px;}
+    .autor-body{padding:18px 16px;}
+    .autor-body h3{font-size:1rem;}
+    .autor-body p{font-size:.92rem;}
 
-    /* rodapé */
-    footer{padding:32px 14px 28px;margin-top:32px;}
-    footer h4{font-size:1.15rem;}
-    footer p{font-size:.88rem;}
-    footer::before{font-size:.9rem;}
+    /* pregação */
+    .preg-list{gap:14px;}
+
+    /* misc */
+    .names-list li{padding:11px 12px 11px 46px;}
+    .names-list li::before{width:24px;height:24px;font-size:.82rem;left:10px;}
+    .tnode{padding:5px 12px;font-size:.88rem;}
+    .trow{gap:8px;}
+    .deathtag{padding:5px 12px 5px 6px;}
+    .deathtag .dot{width:26px;height:26px;}
+    .backlink{font-size:.76rem;}
+    .chip{font-size:.66rem;padding:4px 8px;}
+    .scroll-text{font-size:.95rem;}
   }
 
-  /* ---- 420px: telas muito pequenas ---- */
+  /* ── 420px telas muito pequenas ── */
   @media(max-width:420px){
     .wrap{padding:0 12px;}
     .apbar-wrap .wrap{padding:0 6px;}
     body{font-size:16px;}
 
-    .hero h1{font-size:1.6rem;}
+    /* hero */
+    .hero h1{font-size:1.7rem;}
     .hero .sub{font-size:1rem;}
     .hero::before{display:none;}
     section.block{padding:36px 0;}
 
-    /* 1 coluna em telas muito pequenas */
+    /* apóstolos 1 coluna */
     .apgrid{grid-template-columns:1fr;gap:8px;}
     .apcard{
       flex-direction:row;text-align:left;
@@ -586,37 +519,60 @@
     .apcard .ep{font-size:.8rem;}
     .medal{width:48px;height:48px;flex-shrink:0;}
 
+    /* detalhe */
     .ap-head{gap:10px;}
     .face.lg{width:78px;height:78px;}
     .ap-head h1{font-size:1.55rem;letter-spacing:.02em;}
-
     .panel{padding:14px 12px;}
     .panel h3{font-size:1.1rem;}
 
+    /* herodes */
     .hkid{width:100%;}
     .hkids{gap:6px;}
 
+    /* família */
     .fsibs{flex-direction:column;align-items:center;}
     .fperson{width:72px;}
     .favatar{width:42px;height:42px;}
     .fperson span{font-size:.8rem;}
 
+    /* gravuras */
     .engraving .plate{width:60px;height:60px;}
-    .mplate{width:52px;height:52px;}
+    .mplate{width:46px;height:46px;}
 
-    .brand .bt b,.brand .bt span{font-size:.88rem;}
+    /* brand */
+    .brand .bt b,.brand .bt span{font-size:.82rem;}
+    .brand .seal svg{width:30px;height:30px;}
 
+    /* os doze */
+    .names-grid{grid-template-columns:1fr;}
+    .name-card{padding:14px 12px;}
+
+    /* martírios */
+    .mgroup{padding:12px 14px;}
+    .mplate{width:46px;height:46px;}
+    .mn span{font-size:.68rem;padding:3px 8px;}
+
+    /* autores */
+    .autor-card{border-radius:3px;}
+    .autor-aside{padding:14px 12px;gap:10px;}
+    .autor-foto,.autor-avatar{width:58px;height:58px;}
+    .autor-body{padding:14px 12px;}
+    .autor-obras li{font-size:.8rem;}
+
+    /* linha do tempo */
+    .tl::before{left:64px;}
+    .tl-item{grid-template-columns:58px 1fr;gap:14px;}
+    .tl-year{font-size:.82rem;}
+    .tl-dot{left:59px;}
+
+    /* misc */
     .names-list li{padding:11px 12px 11px 46px;}
     .names-list li::before{width:24px;height:24px;font-size:.82rem;left:10px;}
-    .names-grid{grid-template-columns:1fr;}
-    .name-card::before{font-size:1.2rem;}
-
     .tnode{padding:5px 12px;font-size:.88rem;}
     .trow{gap:8px;}
-
     .deathtag{padding:5px 12px 5px 6px;}
     .deathtag .dot{width:26px;height:26px;}
-
     .backlink{font-size:.72rem;}
     .chip{font-size:.65rem;padding:4px 7px;}
   }
@@ -625,67 +581,6 @@
     *{animation:none!important;scroll-behavior:auto!important;}
   }
 
-  /* ====== AUTORES ESPIRITUAIS ====== */
-  .autor-card{
-    display:grid;grid-template-columns:220px 1fr;gap:0;
-    background:var(--argila);border:1px solid var(--areia);border-radius:4px;
-    box-shadow:var(--sombra-pedra);overflow:hidden;margin-bottom:40px;
-  }
-  .autor-aside{
-    background:linear-gradient(160deg,#2A1E08 0%,#1E1608 100%);
-    color:#E8D4A0;padding:32px 22px;display:flex;flex-direction:column;align-items:center;gap:16px;
-  }
-  .autor-foto{
-    width:100px;height:100px;border-radius:50%;
-    border:3px solid var(--ouro);
-    object-fit:cover;object-position:top center;
-    flex-shrink:0;
-    box-shadow:0 4px 16px rgba(0,0,0,.5);
-    filter:sepia(15%) contrast(1.05);
-  }
-  .autor-avatar{
-    width:100px;height:100px;border-radius:50%;
-    border:3px solid var(--ouro);
-    background:linear-gradient(135deg,#3D3020,#2C2010);
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Cinzel Decorative',serif;font-size:2.4rem;color:var(--ouro-claro);
-    flex-shrink:0;
-  }
-  .autor-meta{text-align:center;}
-  .autor-meta h2{font-size:1.18rem;color:#F2E4B8;letter-spacing:.04em;margin-bottom:6px;}
-  .autor-meta .datas{font-size:.82rem;color:var(--areia);letter-spacing:.1em;font-family:'Cinzel',serif;}
-  .autor-meta .papel{
-    margin-top:10px;font-size:.76rem;letter-spacing:.25em;text-transform:uppercase;
-    color:var(--ouro-claro);font-family:'Cinzel',serif;
-    padding:4px 10px;border:1px solid rgba(196,148,58,.35);border-radius:2px;
-  }
-  .autor-obras{margin-top:16px;text-align:left;width:100%;}
-  .autor-obras h4{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;color:var(--ouro);text-transform:uppercase;margin-bottom:8px;}
-  .autor-obras ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px;}
-  .autor-obras li{font-size:.84rem;color:#D4C4A0;padding-left:14px;position:relative;line-height:1.3;}
-  .autor-obras li::before{content:'·';position:absolute;left:0;color:var(--ouro);}
-  .autor-body{padding:32px 36px;overflow:hidden;}
-  .autor-body h3{font-size:1.05rem;color:var(--terracota);margin-bottom:8px;}
-  .autor-body p{margin:0 0 16px;font-size:.97rem;}
-  .autor-body .src-ref{
-    display:block;font-size:.74rem;letter-spacing:.12em;color:var(--tinta-suave);
-    font-family:'Cinzel',serif;border-top:1px solid var(--linha);padding-top:12px;margin-top:8px;
-  }
-  .autor-body .src-ref a{color:var(--ouro);text-decoration:none;}
-  .autor-nota{
-    background:rgba(196,148,58,.08);border-left:3px solid var(--ouro);
-    padding:12px 16px;border-radius:0 3px 3px 0;margin-top:12px;font-size:.9rem;
-    font-style:italic;
-  }
-  @media(max-width:680px){
-    .autor-card{grid-template-columns:1fr;}
-    .autor-aside{flex-direction:row;flex-wrap:wrap;padding:20px 16px;gap:14px;justify-content:center;}
-    .autor-foto,.autor-avatar{width:70px;height:70px;}
-    .autor-avatar{font-size:1.6rem;}
-    .autor-meta{text-align:left;}
-    .autor-obras{margin-top:0;}
-    .autor-body{padding:20px 18px;}
-  }
 </style>
 </head>
 <body>
