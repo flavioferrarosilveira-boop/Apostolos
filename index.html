@@ -242,8 +242,6 @@
   .verse{border-left:3px solid var(--ouro);padding:2px 0 12px 15px;margin-bottom:10px;break-inside:avoid;}
   .verse .ref{display:block;font-family:'Cinzel';font-weight:600;color:var(--pedra);font-size:1rem;}
   .verse p{margin:2px 0 0;color:#3A2E1A;font-style:italic;font-size:.98rem;}
-  @media(max-width:760px){.verses{grid-template-columns:1fr;}}
-
   .tree{display:flex;flex-direction:column;align-items:center;gap:0;padding-top:4px;}
   .tnode{background:var(--argila);border:1.5px solid var(--pedra-2);border-radius:3px;padding:7px 18px;font-family:'Cinzel',serif;font-size:1rem;color:var(--pedra);min-width:84px;text-align:center;}
   .tnode.unk{color:var(--tinta-suave);border-color:var(--linha);border-style:dashed;font-style:italic;}
@@ -297,13 +295,6 @@
   .tl-body{background:var(--argila);border:1px solid var(--areia);border-radius:3px;padding:11px 18px;box-shadow:var(--sombra);}
   .tl-body b{font-family:'Cinzel';font-size:1.14rem;color:var(--pedra);font-weight:600;}
   .tl-body p{margin:3px 0 0;color:var(--tinta-suave);font-size:.97rem;}
-  @media(max-width:600px){
-    .tl::before{left:7px;}
-    .tl-item{grid-template-columns:1fr;gap:4px;padding-left:30px;}
-    .tl-year{text-align:left;}
-    .tl-dot{left:2px;}
-  }
-
   .herod{max-width:900px;margin:0 auto;text-align:center;}
   .hcouple{display:flex;align-items:stretch;justify-content:center;gap:12px;flex-wrap:wrap;}
   .hnode{background:var(--pedra);color:#F2E4B8;border:2px solid var(--ouro);border-radius:3px;padding:10px 22px;display:inline-block;}
@@ -337,6 +328,171 @@
   .gem{width:42px;height:42px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 50% 35%,#4A3010,#1E1608);border:2px solid var(--ouro);display:flex;align-items:center;justify-content:center;}
   .gem svg{width:64%;height:64%;}
   .glabel .t b{font-family:'Cinzel';font-size:1.08rem;color:var(--pedra);font-weight:600;display:block;line-height:1.1;}
+
+  /* ====================================================
+     RESPONSIVO — mobile first
+     breakpoints: 900 | 680 | 480
+  ==================================================== */
+
+  /* ---- 900px: tablets ---- */
+  @media(max-width:900px){
+    .apgrid{grid-template-columns:repeat(2,1fr);}
+    .panels{grid-template-columns:1fr;}
+    .panel.full{grid-column:1;}
+    .circles{grid-template-columns:1fr;}
+    .marty{grid-template-columns:1fr;}
+    .grow{grid-template-columns:1fr;gap:6px;margin-bottom:20px;}
+    .gaxis{display:none;}
+    .gtrack{height:18px;}
+    .gospels{padding:20px 18px;}
+    .hkid{width:180px;}
+  }
+
+  /* ---- 680px: smartphones grandes ---- */
+  @media(max-width:680px){
+    body{font-size:17px;line-height:1.65;}
+
+    /* header */
+    .topnav{display:none;}
+    .topnav.open{
+      display:flex;position:absolute;top:100%;right:0;left:0;
+      flex-direction:column;
+      background:#1A1006;
+      border-top:1px solid rgba(196,148,58,.3);
+      border-bottom:2px solid var(--ouro);
+      padding:10px 18px 16px;gap:2px;
+      z-index:100;
+    }
+    .topnav.open a{padding:12px 10px;border-radius:3px;font-size:.8rem;}
+    .burger{display:block;}
+    header.site{position:sticky;}
+
+    /* brand */
+    .brand .bt b{font-size:1rem;}
+    .brand .bt span{display:none;}
+    .seal svg{width:34px;height:34px;}
+
+    /* apostle chip bar — scroll horizontal nativo */
+    .apbar{padding:6px 0;gap:3px;}
+    .chip{font-size:.72rem;padding:5px 10px;}
+
+    /* hero */
+    .hero{padding:40px 0 24px;}
+    .hero h1{font-size:clamp(2rem,8vw,3rem);}
+    .hero .sub{font-size:1.2rem;}
+    .hero .lede{font-size:1rem;}
+    .hero::before{letter-spacing:.3em;font-size:.9rem;}
+
+    /* map card */
+    .mapcard{padding:18px 14px 14px;margin-top:28px;}
+    .mapcard::before,.mapcard::after{display:none;}
+
+    /* grid apostles */
+    .apgrid{grid-template-columns:1fr 1fr;gap:10px;}
+    .apcard{padding:14px 8px;}
+    .apcard .nm{font-size:1rem;}
+    .apcard .ep{font-size:.84rem;}
+    .medal{width:60px;height:60px;}
+    .medal.lg{width:100px;height:100px;}
+
+    /* apostle detail header */
+    .ap-head{padding-top:28px;gap:16px;flex-direction:column;align-items:flex-start;}
+    .face.lg{width:100px;height:100px;}
+    .ap-head h1{font-size:clamp(1.8rem,7vw,2.8rem);}
+
+    /* panels */
+    .panels{gap:14px;margin-top:20px;}
+    .panel{padding:18px 16px;}
+    .panel h3{font-size:1.3rem;}
+
+    /* bible verses */
+    .verses{grid-template-columns:1fr;}
+
+    /* genealogy */
+    .fcouple{flex-wrap:wrap;justify-content:center;}
+    .fsibs{gap:8px;}
+    .fsib{padding:5px 12px 5px 6px;}
+
+    /* engraving */
+    .engraving{flex-direction:column;align-items:flex-start;}
+    .engraving .plate{width:80px;height:80px;}
+    .engraving .meta b{font-size:1.3rem;}
+
+    /* timeline */
+    .tl::before{left:7px;}
+    .tl-item{grid-template-columns:1fr;gap:4px;padding-left:28px;}
+    .tl-year{text-align:left;font-size:1rem;}
+    .tl-dot{left:2px;}
+    .tl-body{padding:10px 14px;}
+
+    /* herod tree */
+    .hkids{gap:10px;}
+    .hkid{width:calc(50% - 5px);padding:10px;}
+    .hkid .nm{font-size:.98rem;}
+
+    /* gospels diagram */
+    .grow{grid-template-columns:1fr;gap:4px;margin-bottom:16px;}
+    .gaxis{display:none;}
+    .gtrack{height:14px;}
+    .gbar{height:14px;font-size:0;}
+    .gospels{padding:16px 14px;}
+
+    /* names list */
+    .names-list li{padding:14px 16px 14px 54px;}
+    .names-list li::before{width:28px;height:28px;font-size:.95rem;left:12px;}
+
+    /* marty groups */
+    .mgroup{padding:16px 16px;}
+    .mgroup .mh .dot{width:34px;height:34px;}
+    .mgroup .mh b{font-size:1.18rem;}
+
+    /* section heads */
+    .section-head h2{font-size:clamp(1.7rem,6vw,2.4rem);}
+    .section-head p{font-size:.97rem;}
+
+    /* circles */
+    .circles{gap:14px;}
+    .circle{padding:20px 18px;}
+    .circle h3{font-size:1.4rem;}
+
+    /* scroll text (longo) */
+    .scroll-text p:first-of-type::first-letter{font-size:2.8rem;}
+
+    /* footer */
+    footer{padding:36px 16px 32px;margin-top:40px;}
+    footer h4{font-size:1.2rem;}
+    footer p{font-size:.9rem;}
+  }
+
+  /* ---- 480px: smartphones pequenos ---- */
+  @media(max-width:480px){
+    .wrap{padding:0 14px;}
+
+    .apgrid{grid-template-columns:1fr;gap:10px;}
+    .apcard{flex-direction:row;text-align:left;padding:14px 16px;gap:14px;}
+    .apcard .nm{margin-top:0;font-size:1.05rem;}
+    .medal{width:52px;height:52px;flex-shrink:0;}
+
+    .ap-head{gap:12px;}
+    .face.lg{width:84px;height:84px;}
+    .ap-head h1{font-size:1.7rem;}
+
+    .hkid{width:100%;}
+
+    .fsibs{flex-direction:column;align-items:center;}
+
+    .engraving .plate{width:66px;height:66px;}
+
+    /* brand só ícone */
+    .brand .bt b{font-size:.9rem;}
+
+    .hero h1{font-size:1.9rem;}
+    .hero .sub{font-size:1.05rem;}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto!important;}
+  }
 </style>
 </head>
 <body>
