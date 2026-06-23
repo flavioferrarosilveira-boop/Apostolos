@@ -1267,12 +1267,12 @@ function tree(g){
 
 function apostleView(a){
   const d=DEATH[a.death];
-  const longtext = a.texto ? `
-    <section class="block"><div class="wrap"><hr class="rule" style="max-width:120px;margin:0 auto 40px">
-      <div class="scroll-text">
-        ${typeof a.texto === 'string' ? a.texto : `<h3>${a.texto.titulo}</h3><p class="src">${a.texto.src}</p>${a.texto.paras.map(p=>`<p>${p}</p>`).join('')}`}
-      </div>
-    </div></section>` : '';
+  const textoHtml = a.texto ? (typeof a.texto === 'string' ? a.texto : `<h3>${a.texto.titulo}</h3><p class="src">${a.texto.src}</p>${a.texto.paras.map(p=>`<p>${p}</p>`).join('')}`) : '';
+  const longtextPanel = textoHtml ? `
+        <div class="panel full">
+          <h3><span class="ix">VI</span>Síntese biográfica</h3><hr class="rule">
+          <div class="scroll-text">${textoHtml}</div>
+        </div>` : '';
   a.gen._self=a.nome; a.gen._id=a.id;
   return `${worldDefs()}
   <section class="block" style="padding-bottom:0">
@@ -1319,12 +1319,12 @@ function apostleView(a){
           ${deathMap(a.id)}
           ${quotes(a.morteq)}
         </div>
+        ${longtextPanel}
       </div>
 
       <div style="text-align:center"><a class="backlink" data-nav href="#inicio">← Voltar a todos os apóstolos</a></div>
     </div>
-  </section>
-  ${longtext}`;
+  </section>`;
 }
 
 /* ===== mapa da Terra Santa no tempo de Jesus (carta antiga em SVG) ===== */
