@@ -690,11 +690,11 @@
       <a href="#historia" data-nav>História</a>
       <a href="#origens" data-nav>Origens</a>
       <a href="#doze" data-nav>Os Doze</a>
+      <a href="#evangelistas" data-nav>Evangelistas</a>
       <a href="#martirios" data-nav>Martírios</a>
       <a href="#pregacao" data-nav>Pregação</a>
       <a href="#circulos" data-nav>Contexto</a>
       <a href="#autores" data-nav>Autores</a>
-      <a href="#evangelistas" data-nav>Evangelistas</a>
     </nav>
   </div>
   <div class="apbar-wrap">
@@ -1323,11 +1323,15 @@ function tree(g){
   const couple = (g.pai||g.mae)
     ? `<div class="fcouple">${person(g.pai)}<div class="fbond">⚭</div>${person(g.mae)}</div>`
     : `<div class="fcouple">${person(null)}</div>`;
-  const sibs = g.irmaos.length
-    ? `<div class="fsiblabel">Irmãos / parentes</div><div class="fsibs">${g.irmaos.map(s=>{
-        const ic=N2I[s];
-        return `<div class="fsib"><span class="ic">${ic?ICON[ic]:GEMINI}</span><span>${s}</span></div>`;
-      }).join('')}</div>`
+  const sibList=[...g.irmaos];
+  const extraRel=[];
+  if(g.tio) extraRel.push({label:'Tio', name:g.tio});
+  if(g.primo) extraRel.push({label:'Primo', name:g.primo});
+  const sibs = (sibList.length||extraRel.length)
+    ? `<div class="fsiblabel">Irmãos / parentes</div><div class="fsibs">
+        ${sibList.map(s=>{const ic=N2I[s];return `<div class="fsib"><span class="ic">${ic?ICON[ic]:GEMINI}</span><span>${s}</span></div>`;}).join('')}
+        ${extraRel.map(r=>{const ic=N2I[r.name];return `<div class="fsib"><span class="ic">${ic?ICON[ic]:GEMINI}</span><span>${r.name} <em style="font-size:.72rem;color:var(--ouro);font-style:normal;">(${r.label})</em></span></div>`;}).join('')}
+      </div>`
     : '';
   return `<div class="ftree">${couple}<div class="fdrop"></div>
     <div class="fself">${portrait(g._id)}<b>${g._self}</b></div>${sibs}</div>`;
@@ -2186,9 +2190,9 @@ const EV=[
   { id:'marcos', nome:'Marcos', ep:'João Marcos', epíteto:'Intérprete de Pedro e fundador da Igreja de Alexandria',
     origem:{cidade:'Jerusalém', regiao:'Judeia'},
     death:'nd', deathplace:'alexandria',
-    gen:{pai:'(proprietário do jardim de Getsêmani)', mae:'Maria de Jerusalém', irmaos:[]},
+    gen:{pai:'(proprietário do jardim de Getsêmani)', mae:'Maria de Jerusalém', irmaos:[], tio:'Simão Pedro'},
     nascimento:[
-      {t:'Marcos, também chamado João, filho de Maria, de Jerusalém, em cujo lar os cristãos se reuniam e onde o Apóstolo Pedro, libertado do presídio, foi acolhido.', s:'Primícias do Reino — Posfácio · Amélia Rodrigues / Divaldo Franco'},
+      {t:'Marcos, também chamado João, filho de Maria, de Jerusalém, em cujo lar os cristãos se reuniam e onde o Apóstolo Pedro — seu tio —, libertado do presídio, foi acolhido.', s:'Primícias do Reino — Posfácio · Amélia Rodrigues / Divaldo Franco'},
       {t:'Essa casa foi, quando vivo o pai de Marcos, aquela em que se celebrou a Ceia do Senhor, sendo também o pai de Marcos o proprietário do jardim de Getsêmani.', s:'Vida e Atos dos Apóstolos — Os Apóstolos Marcos e Barnabé · Cairbar Schutel'},
       {t:'A mãe de João Marcos era uma das discípulas mais desassombradas e generosas. Reconhecendo as dificuldades dos irmãos de Jerusalém, não vacilara em colocar seus bens à disposição de todos os necessitados.', s:'Paulo e Estêvão — cap. IV · Emmanuel / Francisco Cândido Xavier'},
     ],
@@ -2208,7 +2212,7 @@ const EV=[
     rota:['jerusalem','antioquia','persia','roma','egito'],
     obras:['Evangelho de Marcos'],
     texto:`<p class="src">Vida e Atos dos Apóstolos — Cairbar Schutel / Paulo e Estêvão — Emmanuel / Chico Xavier</p>
-<p>Marcos, também chamado João, filho de Maria, de Jerusalém, em cujo lar os cristãos se reuniam e onde o Apóstolo Pedro, libertado do presídio, foi acolhido; conheceu de perto as lides apostólicas junto a Paulo e Barnabé, dos quais se afastou em Perge, na Panfília, retornando a Jerusalém, tendo sido convocado, mais tarde, pelo próprio Pedro, à sementeira em Roma, em cuja ocasião grafou a sua narrativa.</p>
+<p>Marcos, também chamado João, filho de Maria, de Jerusalém, em cujo lar os cristãos se reuniam e onde o Apóstolo Pedro — seu tio —, libertado do presídio, foi acolhido; conheceu de perto as lides apostólicas junto a Paulo e Barnabé, dos quais se afastou em Perge, na Panfília, retornando a Jerusalém, tendo sido convocado, mais tarde, pelo próprio Pedro, à sementeira em Roma, em cuja ocasião grafou a sua narrativa.</p>
 <p>O nome Marcos aparece nos Atos como sendo um judeu de Jerusalém, chamado João, que tinha adotado o sobrenome romano, Marcos. Essa casa foi, quando vivo o pai de Marcos, aquela em que se celebrou a Ceia do Senhor, sendo também o pai de Marcos o proprietário do jardim de Getsêmani.</p>
 <p>Marcos trabalhou muito, após a difusão do Espírito no Cenáculo. Quando Barnabé e Paulo voltaram de Jerusalém à Antioquia, depois de haverem cumprido sua missão de portadores de socorros, Marcos os acompanhou. Em outra viagem, ele fez companhia a Barnabé, navegou para Chipre, donde este era natural.</p>
 <p>Pensa-se que Marcos exerceu o seu ministério no Egito, tendo fundado em Alexandria o primeiro núcleo Cristão. Pelas Epístolas de Paulo, vê-se que Marcos foi um grande cooperador. Quando Paulo, da sua prisão em Roma, expediu epístolas aos Colossenses e a Filemon, lembra que Marcos é seu companheiro — não mais como ajudante, mas como cooperador do Evangelho.</p>
