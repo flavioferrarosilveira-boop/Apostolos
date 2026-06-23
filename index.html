@@ -870,7 +870,10 @@ const PLACES={
   citia:{n:'Cítia',x:326,y:132,p:'Ucrânia / Rússia'},
   macedonia:{n:'Macedônia',x:251,y:169,p:'Macedônia do Norte'},
   beocia:{n:'Beócia (Grécia)',x:255,y:192,p:'Grécia'},
-  alexandria:{n:'Alexandria',x:289,y:248,p:'Egito'}
+  alexandria:{n:'Alexandria',x:289,y:248,p:'Egito'},
+  magdala:{n:'Magdala (Mar da Galileia)',x:338,y:232,p:'Israel'},
+  efeso_f:{n:'Éfeso',x:281,y:190,p:'Turquia'},
+  provenca:{n:'Provença (França)',x:138,y:141,p:'França'}
 };
 const DEATHPLACE={pedro:'roma',andre:'patras','tiago-maior':'jerusalem',joao:'efeso',felipe:'hierapolis',
   bartolomeu:'albana',mateus:'etiopia',tome:'india','tiago-menor':'jerusalem','simao-zelote':'britania',
@@ -2256,6 +2259,61 @@ const EV=[
 <p>Pensa-se que Marcos exerceu o seu ministério no Egito, tendo fundado em Alexandria o primeiro núcleo Cristão. Pelas Epístolas de Paulo, vê-se que Marcos foi um grande cooperador. Quando Paulo, da sua prisão em Roma, expediu epístolas aos Colossenses e a Filemon, lembra que Marcos é seu companheiro — não mais como ajudante, mas como cooperador do Evangelho.</p>
 <p>Muitos escritores chamam a Marcos o intérprete de Pedro. A mãe de João Marcos era uma das discípulas mais desassombradas e generosas — não vacilara em colocar seus bens à disposição de todos os necessitados, nem hesitou em abrir as portas para que as reuniões evangélicas não sofressem solução de continuidade.</p>`
   },
+  { id:'madalena', nome:'Maria Madalena', ep:'A Rediviva de Magdala', epíteto:'Primeira testemunha da Ressurreição',
+    origem:{cidade:'Magdala', regiao:'Galileia'},
+    death:'natural', deathplace:'provenca',
+    gen:{pai:null, mae:null, irmaos:[]},
+    nascimento:[
+      {t:'Magdala era um centro de comércio e indústria de muita prosperidade. Para lá acorriam mercadores e aventureiros de todo o Oriente. Reclinada sobre as bordas do mar, gozava de clima ameno e desfrutava de águas piscosas privilegiadas. Estação de repouso, recebia viajantes ilustres e nobres gregos, romanos, babilônios, fenícios, medos.', s:'Primícias do Reino — cap. 17 · Amélia Rodrigues / Divaldo Franco'},
+      {t:'Em sua casa recepcionava os homens mais requestados que transitavam pela urbe agitada. Era muito jovem; o licor da mocidade corria capitoso e sedutor. Na imensa residência rica, cheia de preciosidades, sentia-se vazia, vulgar e atormentada. Sofria indizível amargura.', s:'Primícias do Reino — cap. 17 · Amélia Rodrigues / Divaldo Franco'},
+    ],
+    morte:'A tradição identificou Maria Madalena com a mulher pecadora de Lucas 7. Após a Ascensão, segundo a tradição francesa, refugiou-se em Éfeso com Maria e João, e mais tarde, aportou à Provença (Gália Meridional), onde evangelizou e viveu em recolhimento até a morte natural.',
+    morteq:[
+      {t:'A emoção desbordava em lágrimas, enquanto sentada à entrada do sepulcro aberto na rocha, conjecturava: que acontecera? Para onde O teriam levado e por que O trasladaram daqueles sítios, no silêncio da noite?', s:'Primícias do Reino — cap. 17 · Amélia Rodrigues / Divaldo Franco'},
+      {t:'Voltou-se para trás e por entre as lágrimas viu, a poucos metros, um homem que lhe perguntou: — Mulher, por que choras? Quem buscas?... Aquela voz, aquele perfil! Não pôde concluir o raciocínio. — Maria!... — Raboni!', s:'Primícias do Reino — cap. 17 · Amélia Rodrigues / Divaldo Franco'},
+    ],
+    biblia:[
+      {ref:'Lucas 7:36-50', t:'A mulher pecadora que unge os pés de Jesus e os enxuga com os cabelos.'},
+      {ref:'Lucas 8:2', t:'"Maria, chamada Madalena, da qual saíram sete demônios."'},
+      {ref:'João 19:25', t:'Maria Madalena está ao pé da Cruz.'},
+      {ref:'João 20:11-18', t:'Maria Madalena é a primeira a ver o Ressuscitado junto ao sepulcro.'},
+      {ref:'Mateus 28:1-10', t:'As mulheres vão ao sepulcro; o anjo anuncia a Ressurreição.'},
+      {ref:'Marcos 16:9', t:'"Jesus, tendo ressuscitado de manhã cedo no primeiro dia da semana, apareceu primeiro a Maria Madalena."'},
+    ],
+    rota:['magdala','jerusalem','efeso_f','provenca'],
+    obras:['Testemunha da Ressurreição (tradição oral)'],
+    texto:`<p class="src">Primícias do Reino — cap. 17, «A Rediviva de Magdala» · Amélia Rodrigues / Divaldo Franco</p>
+<p>A emoção desbordava em lágrimas, enquanto sentada à entrada do sepulcro aberto na rocha, conjecturava: que acontecera? Para onde O teriam levado e por que O trasladaram daqueles sítios, no silêncio da noite?</p>
+<p>A inquietação assumia proporções de desespero que a dominava lentamente. O Sol irisava as nuvens pardacentas, e o vento frio sacudia as poucas anêmonas e raras rosas por entre os arbustos.</p>
+<p>Na mente ecoavam, sonoras, as vozes dos <em>mancebos</em> de vestes alvas, que lhe disseram: <em>— Não tenhas medo, pois eu sei que buscais a Jesus, que foi crucificado. Ele não está aqui, porque já ressuscitou...</em></p>
+<p>Ela cria que o Mestre, conforme dissera, ressuscitaria dos mortos. Temia, no entanto, que os judeus houvessem roubado o corpo. Atemorizadas, Joana de Cusa, Maria, mãe de Marcos, e as outras companheiras desceram à cidade para anunciar o desaparecimento do corpo do Rabi.</p>
+<p>Pedro e João subiram o monte ansiosos e constataram os fatos: os lençóis com as substâncias aromáticas do embalsamamento no túmulo vazio, o lenço, a pedra afastada... Estarrecidos, os dois discípulos retornaram à cidade, com as tristes novas; ela ficara chorando.</p>
+<p>Os acontecimentos daqueles últimos dias foram muito dolorosos e surpreendentes. Não conseguia compreender nem concatenar os sucessos. Uma saudade feita de pungente dor estrangulava-lhe o peito. Foi muito rápido. Teve a impressão de uma aragem que perpassou levemente perfumada.</p>
+<p>Voltou-se para trás e por entre as lágrimas viu, a poucos metros, um homem que lhe perguntou:</p>
+<p><em>— Mulher, por que choras? Quem buscas?...</em></p>
+<p><em>Aquela voz, aquele perfil! Não pôde concluir o raciocínio.</em></p>
+<p><em>— Maria!...</em></p>
+<p><em>— Raboni!</em></p>
+<p>O deslumbramento dominou-a. O Mestre vivia e ali estava, radioso como a madrugada nascente!</p>
+<p><em>— Não me detenhas!... vai para meus irmãos, e dize-lhes que eu sigo para meu Pai e vosso Pai, meu Deus e vosso Deus!</em></p>
+<p>A luz de ouro do amanhecer incidia sobre as suas vestes, que fulguravam, e miríades de pequeninos sóis pareciam incrustadas n'Ele. Ficou esmagada de felicidade. Desejou traduzir com palavras as impressões incomparáveis como as dores vividas até há pouco. Não pôde fazê-lo; a voz estava morta na garganta hirta e constringida. <em>—Vai para meus irmãos e dize-lhes...</em> Reboava-lhe nos refolhos do Espírito.</p>
+<p>Pôs-se de pé. Sorriu e, sem mais delongas, tomou o rumo da cidade que despertava, com a alma em cânticos de excelsa alegria. O leve ar da manhã embalsamada com os últimos perfumes da quadra, o verde dos campos de Acra e Bezeta, a paisagem emoldurada de Sol com o píncaro dos montes debruçado a ouro — eis a tela sublime em que Ele volvera.</p>
+<p>Venceu a distância com febricidade e atingiu o cenáculo onde os companheiros se acolhiam constrangidos e receosos. Pairavam no ambiente triste as sombras do desgosto.</p>
+<p>Ela disse, logo que atravessou a porta, e sua voz cantava:</p>
+<p><em>— Eu O vi, vi o Rabi! O Mestre voltou aos que O amam!</em></p>
+<p>Sorria e chorava. Tartamudeando, com o rosto rubro pela emoção, prosseguiu: <em>— Mandou-me anunciá-lO aos seus irmãos. Elevar-se-á ao Pai. Ouvi bem: Jesus vive!</em></p>
+<p>Todas as suas fibras tremiam, como se fossem disjuntar. Sua voz vibrava harmonias que não encontravam receptividade no coração dos companheiros. Àqueles, ela conhecia da convivência diária naquelas últimas semanas.</p>
+<p>Ele avançou na sua direção, face contraída num <em>ríctus</em> de ira e desencanto. Antes que ela dissesse algo, ele interpor-se, frente ao auditório perplexo, atônito, e vociferou: <em>— Mesmo que Ele viesse...</em> Interrompeu-se numa pausa. <em>— ... iria apresentar-se a quem? Certamente que a Simão que Ele elegera para conduzir-nos; ou a João, a quem sempre distinguiu com o Seu amor; ou à Sua mãe...</em></p>
+<p>Transparecia no tom sarcástico e zombeteiro da palavra cortante todo o azedume do seu Espírito atormentado e infeliz. E depois de pausa maior, ante a estupefação de todos: <em>— ... Mas a ti Ele apareceu? Não, não o creio. Não creiamos. Não é possível que Ele tenha aparecido exatamente a ela. Não estiveram outras no sepulcro? João e Pedro lá não foram? Por que a ela?...</em></p>
+<p>Foi como uma chuva de gelo e mal-estar que caísse sobre todos. Um silêncio incômodo invadiu a sala. Ela recuou. As indagações finais foram cruéis punhaladas. "A ti?" "Por que a ela?" Eram ácidos queimando e requeimando.</p>
+<p>Mesmo assim, com grande esforço, vencendo o próprio sofrimento, retrucou com voz débil: <em>— É verdade! Mesmo que não o creias, eu O vi. Apesar da minha antiga e infeliz condição — balbuciou humilhada — a mim me apareceu há pouco o Rabi...</em></p>
+<p><em>— Eu o creio, filha — acentuou a Sua saudosa mãe. — Secreto pressentimento diz-me que meu filho vive. Eu o creio, porque sei que a nossa dor e saudade estão com Ele, como a Sua saudade se demora em nós.</em></p>
+<p>Envolveu-a docemente e procurou ouvi-la com atencioso carinho. Mentalmente ela refez os caminhos percorridos — longos e tortuosos!</p>
+<p>Magdala era um centro de comércio e indústria de muita prosperidade. Para lá acorriam mercadores e aventureiros de todo o Oriente. Reclinada sobre as bordas do mar, gozava de clima ameno e desfrutava de águas piscosas privilegiadas. Em sua casa recepcionava os homens mais requestados que transitavam pela urbe agitada.</p>
+<p>Era muito jovem; o licor da mocidade corria capitoso e sedutor. Na imensa residência rica, cheia de preciosidades, sentia-se vazia, vulgar e atormentada. A sua condição de mulher rica não lhe mudava o caráter infame de pobre meretriz, mercadora dos perfumes da ilusão. Sofria indizível amargura.</p>
+<p>Muitas vezes a bofetada lhe estrugiria em plena face. Era mesmo natural que lhe duvidassem da palavra. Ela se sentia toda podridão. Não fora o chamado do Rabi e estaria, talvez, na enxerga da infinita descompostura ou na total destruição. E muitas vezes, no futuro, verteria o pranto da recuperação, até às fezes, por ter sido louca.</p>
+<p>Facilmente se impreca contra o erro, mas bem poucos são aqueles que alongam as mãos convertidas em alavancas de soerguimento para ampararem as vítimas da ignorância e da criminalidade. Não que desejasse justificar-se. Sua conduta fora inclassificável. Ela fora abjeta, sim, reconhecia-o.</p>`
+  },
   { id:'matias', nome:'Matias', ep:'O Décimo Terceiro', epíteto:'Escolhido por sortes para completar o colégio apostólico',
     origem:{cidade:'Jerusalém', regiao:'Judeia'},
     death:'cruz', deathplace:'etiopia',
@@ -2307,6 +2365,14 @@ const EV_BIBLIA={
     {ref:'Atos 1:23', t:'Candidatos: José Barsabás (cognome Justo) e Matias.'},
     {ref:'Atos 1:24-25', t:'"Tu, Senhor, que conheces os corações de todos, mostra qual destes dois tens escolhido."'},
     {ref:'Atos 1:26', t:'"Caiu a sorte sobre Matias, e foi ele contado com os onze Apóstolos."'},
+  ],
+  madalena:[
+    {ref:'Lucas 7:36-50', t:'A mulher pecadora que unge os pés de Jesus na casa de Simão.'},
+    {ref:'Lucas 8:2', t:'"Maria, chamada Madalena, da qual saíram sete demônios."'},
+    {ref:'João 19:25', t:'Maria Madalena está ao pé da Cruz com Maria e João.'},
+    {ref:'João 20:11-18', t:'A primeira a ver o Ressuscitado: "Raboni!" — respondeu ela.'},
+    {ref:'Mateus 28:1-10', t:'Com Maria, mãe de Tiago, vai ao sepulcro; anjo anuncia a Ressurreição.'},
+    {ref:'Marcos 16:9', t:'"Jesus apareceu primeiro a Maria Madalena, da qual havia expulsado sete demônios."'},
   ]
 };
 
@@ -2403,8 +2469,8 @@ function evangelistasView(){
   return `<section class="block"><div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Evangelistas e Colaboradores Apostólicos</span>
-      <h2>Lucas, Marcos e Matias</h2>
-      <p>Figuras que ampliaram o colégio e registraram os feitos de Jesus — fontes das obras espíritas que fundamentam este estudo.</p>
+      <h2>Lucas, Marcos, Matias e Maria Madalena</h2>
+      <p>Figuras que ampliaram o colégio, registraram os feitos de Jesus e testemunharam a Ressurreição — fontes das obras espíritas que fundamentam este estudo.</p>
     </div>
     <div class="apgrid">${items}</div>
 
