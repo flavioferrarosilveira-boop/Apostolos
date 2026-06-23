@@ -635,6 +635,14 @@
     background:linear-gradient(160deg,#2A1E08 0%,#1E1608 100%);
     color:#E8D4A0;padding:32px 22px;display:flex;flex-direction:column;align-items:center;gap:16px;
   }
+  .autor-foto{
+    width:100px;height:100px;border-radius:50%;
+    border:3px solid var(--ouro);
+    object-fit:cover;object-position:top center;
+    flex-shrink:0;
+    box-shadow:0 4px 16px rgba(0,0,0,.5);
+    filter:sepia(15%) contrast(1.05);
+  }
   .autor-avatar{
     width:100px;height:100px;border-radius:50%;
     border:3px solid var(--ouro);
@@ -672,7 +680,8 @@
   @media(max-width:680px){
     .autor-card{grid-template-columns:1fr;}
     .autor-aside{flex-direction:row;flex-wrap:wrap;padding:20px 16px;gap:14px;justify-content:center;}
-    .autor-avatar{width:70px;height:70px;font-size:1.6rem;}
+    .autor-foto,.autor-avatar{width:70px;height:70px;}
+    .autor-avatar{font-size:1.6rem;}
     .autor-meta{text-align:left;}
     .autor-obras{margin-top:0;}
     .autor-body{padding:20px 18px;}
@@ -2072,6 +2081,7 @@ function autoresView(){
       ],
       nota:'Em 21 de novembro de 1962, durante conferência em Buenos Aires, Divaldo Franco recebeu o célebre <em>Poema da Gratidão</em>, atribuído ao espírito de Amélia Rodrigues — uma das peças mais recitadas no movimento espírita brasileiro.',
       obras:['Luz do Mundo','Há Flores no Caminho','Pelos Caminhos de Jesus','Até o Fim dos Tempos','Trigo de Deus','Primícias do Reino','O Semeador (infantil)','Sol de Esperança'],
+      foto:null,
       fonte:'FEB — Efeméride Amélia Rodrigues',
       fonteUrl:'https://www.febnet.org.br'
     },
@@ -2090,6 +2100,7 @@ function autoresView(){
       ],
       nota:'Em 1944, a viúva de Humberto de Campos ajuizou ação contra a FEB e Chico Xavier reivindicando direitos autorais. A sentença, confirmada em grau de recurso, determinou que "a existência da pessoa natural cessa com a morte; consequentemente, todos os direitos se extinguem" — tornando-se um marco jurídico da psicografia no Brasil.',
       obras:['Crônicas de Além-Túmulo','Brasil, Coração do Mundo','Boa Nova','Reportagens de Além-Túmulo','Lázaro Redivivo','Luz Acima','Pontos e Contos','Contos e Apólogos'],
+      foto:'https://upload.wikimedia.org/wikipedia/commons/5/57/Humberto_de_Campos_(1926).jpg',
       fonte:'FEB — Nascimento de Humberto de Campos',
       fonteUrl:'https://www.febnet.org.br'
     }
@@ -2098,7 +2109,10 @@ function autoresView(){
   const cards=autores.map(a=>`
     <div class="autor-card">
       <div class="autor-aside">
-        <div class="autor-avatar">${a.inicial}</div>
+        ${a.foto
+          ? `<img class="autor-foto" src="${a.foto}" alt="${a.nome}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             <div class="autor-avatar" style="display:none">${a.inicial}</div>`
+          : `<div class="autor-avatar">${a.inicial}</div>`}
         <div class="autor-meta">
           <h2>${a.nome}</h2>
           <div class="datas">${a.datas}</div>
