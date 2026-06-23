@@ -371,6 +371,31 @@
   .src-ref{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro);margin-top:4px;}
   .src-ref a{color:var(--ouro);text-decoration:underline;text-underline-offset:3px;}
 
+  /* ====== EVANGELISTAS ====== */
+  .ev-card{display:grid;grid-template-columns:260px 1fr;gap:0;background:var(--argila);border:1px solid var(--areia);border-radius:4px;box-shadow:var(--sombra-pedra);margin-bottom:32px;overflow:hidden;}
+  .ev-aside{background:linear-gradient(160deg,#2A1E08 0%,#1E1608 100%);padding:32px 24px;display:flex;flex-direction:column;align-items:center;gap:18px;border-right:1px solid var(--ouro);}
+  .ev-icon{width:80px;height:80px;background:linear-gradient(145deg,#E0D0A8,#C8B882);border:1px solid #B8A070;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#3A2A08;flex-shrink:0;}
+  .ev-icon svg{width:52%;height:52%;}
+  .ev-meta{text-align:center;width:100%;}
+  .ev-sub{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro);margin-bottom:2px;}
+  .ev-nome{font-family:'Cinzel',serif;font-size:1.4rem;color:#F2E4B8;margin:0 0 6px;line-height:1.2;}
+  .ev-datas{font-size:.74rem;letter-spacing:.08em;color:#B8A880;margin-bottom:4px;}
+  .ev-papel{font-size:.8rem;color:#C8B882;font-style:italic;line-height:1.4;}
+  .ev-obras{width:100%;}
+  .ev-obras-label{font-family:'Cinzel',serif;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ouro);margin-bottom:7px;}
+  .ev-obras ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;}
+  .ev-obras li{font-size:.78rem;color:#C8B882;padding:3px 8px;background:rgba(255,255,255,.04);border-left:2px solid var(--ouro);font-style:italic;}
+  .ev-fontes{width:100%;}
+  .ev-fonte-item{display:flex;flex-direction:column;gap:1px;padding:4px 0;border-bottom:1px solid rgba(196,148,58,.12);}
+  .ev-fonte-item em{font-size:.76rem;color:#D4C090;font-style:italic;}
+  .ev-fonte-item span{font-size:.68rem;color:#8A7850;letter-spacing:.04em;}
+  .ev-body{padding:36px 38px;}
+  .ev-section{margin-bottom:26px;}
+  .ev-section:last-child{margin-bottom:0;}
+  .ev-section h3{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--pedra);margin:0 0 8px;display:flex;align-items:baseline;gap:10px;}
+  .ev-num{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.22em;color:var(--ouro);text-transform:uppercase;}
+  .ev-section p{margin:0;color:#2A1E08;line-height:1.75;font-size:.97rem;text-align:justify;}
+
   /* ====================================================
      RESPONSIVO — desktop → tablet (900) → mobile (680) → xs (420)
   ==================================================== */
@@ -393,6 +418,10 @@
     .autor-aside{padding:24px 16px;}
     .autor-foto,.autor-avatar{width:82px;height:82px;}
     .autor-body{padding:24px 24px;}
+    /* evangelistas 900 */
+    .ev-card{grid-template-columns:200px 1fr;}
+    .ev-aside{padding:24px 16px;}
+    .ev-body{padding:24px 22px;}
     /* evangelhos */
     .grow{grid-template-columns:1fr;gap:6px;margin-bottom:20px;}
     .gaxis{display:none;}
@@ -519,6 +548,17 @@
     .autor-body{padding:18px 16px;}
     .autor-body h3{font-size:1rem;}
     .autor-body p{font-size:.92rem;}
+    /* evangelistas 680 */
+    .ev-card{grid-template-columns:1fr;}
+    .ev-aside{flex-direction:row;flex-wrap:wrap;padding:18px 16px;gap:12px;align-items:flex-start;border-right:none;border-bottom:1px solid var(--ouro);}
+    .ev-icon{width:60px;height:60px;}
+    .ev-meta{flex:1;text-align:left;min-width:160px;}
+    .ev-nome{font-size:1.2rem;}
+    .ev-obras{width:100%;}
+    .ev-fontes{width:100%;}
+    .ev-body{padding:20px 16px;}
+    .ev-section h3{font-size:.95rem;}
+    .ev-section p{font-size:.9rem;}
 
     /* pregação */
     .preg-list{gap:14px;}
@@ -597,6 +637,11 @@
     .autor-foto,.autor-avatar{width:58px;height:58px;}
     .autor-body{padding:14px 12px;}
     .autor-obras li{font-size:.8rem;}
+    /* evangelistas 420 */
+    .ev-icon{width:50px;height:50px;}
+    .ev-nome{font-size:1.1rem;}
+    .ev-body{padding:14px 12px;}
+    .ev-section p{font-size:.88rem;}
 
     /* linha do tempo */
     .tl::before{left:64px;}
@@ -649,6 +694,7 @@
       <a href="#pregacao" data-nav>Pregação</a>
       <a href="#circulos" data-nav>Contexto</a>
       <a href="#autores" data-nav>Autores</a>
+      <a href="#evangelistas" data-nav>Evangelistas</a>
     </nav>
   </div>
   <div class="apbar-wrap">
@@ -2102,6 +2148,131 @@ function autoresView(){
   </div></section>`;
 }
 
+function evangelistasView(){
+  const ev=[
+    {
+      id:'lucas',
+      inicial:'L',
+      nome:'Lucas',
+      sub:'O Evangelista',
+      datas:'séc. I d.C.',
+      origem:'Antioquia, Síria',
+      papel:'Médico · Evangelista · Companheiro de Paulo',
+      foto:null,
+      icon:'book',
+      sections:[
+        {titulo:'Médico e Evangelista de Antioquia',
+         texto:'Lucas, recém-convertido por Paulo, residiu em Cesaréia, no lar do diácono Filipe, de quem, emocionado, escutou a narrativa oral dos acontecimentos, bem como, em Jerusalém, ouviu os mesmos fatos contados por Tiago Menor. Erudito, nascido em Antioquia, de cultura helênica, é o narrador deslumbrado e comovido dos feitos e palavras de Jesus.'},
+        {titulo:'O Mais Belo dos Evangelhos',
+         texto:'É o mais lindo dos quatro Evangelhos, impregnado da mansuetude do Cordeiro. Escrevendo ao "excelente Teófilo", é dedicado à grande grei dos gentios, arrebatada pelo verbo candente de Paulo, seu mestre.'},
+        {titulo:'Os Atos dos Apóstolos',
+         texto:'Por volta de 63, aproximadamente, Lucas narrou os Atos dos Apóstolos, utilizando-se das informações que lhe chegaram por personagens que participaram daqueles acontecimentos inesquecíveis. Lucas escreveu em grego castiço, desde o início, os apontamentos que lhe chegaram por Paulo, dando uma ordem lógica e clara aos fatos e comentários aos discursos do Mestre. Possivelmente ouviu Maria narrando a infância do Filho.'},
+      ],
+      obras:['Evangelho de Lucas','Atos dos Apóstolos'],
+      fontes:[
+        {t:'Primícias do Reino — Posfácio', s:'Amélia Rodrigues / Divaldo Franco'},
+        {t:'Quando Voltar a Primavera — Proginasma histórico', s:'Amélia Rodrigues / Divaldo Franco'},
+        {t:'Há Flores no Caminho — Autenticidade histórica do Evangelho', s:'Amélia Rodrigues / Divaldo Franco'},
+      ]
+    },
+    {
+      id:'marcos',
+      inicial:'M',
+      nome:'Marcos',
+      sub:'João Marcos',
+      datas:'séc. I d.C.',
+      origem:'Jerusalém',
+      papel:'Evangelista · Intérprete de Pedro',
+      foto:null,
+      icon:'scroll',
+      sections:[
+        {titulo:'Filho de Maria de Jerusalém',
+         texto:'Marcos, também chamado João, filho de Maria, de Jerusalém, em cujo lar os cristãos se reuniam e onde o Apóstolo Pedro, libertado do presídio, foi acolhido. Conheceu de perto as lides apostólicas junto a Paulo e Barnabé, dos quais se afastou em Perge, na Panfília, retornando a Jerusalém, tendo sido convocado, mais tarde, pelo próprio Pedro, à sementeira em Roma, em cuja ocasião grafou a sua narrativa.'},
+        {titulo:'O Evangelho de Marcos',
+         texto:'Marcos narrou os fatos num período que vai de 55 a 62, em Roma, ao lado de Pedro. Muitos escritores chamam a Marcos o intérprete de Pedro. A casa de sua mãe foi também aquela em que se celebrou a Ceia do Senhor, sendo o pai de Marcos o proprietário do jardim de Getsêmani.'},
+        {titulo:'Missionário no Egito',
+         texto:'Pensa-se que Marcos exerceu o seu ministério no Egito, tendo fundado em Alexandria o primeiro núcleo Cristão. Nas Epístolas de Paulo, vê-se que Marcos foi fiel: quando Paulo, da sua prisão em Roma, expediu epístolas aos Colossenses e a Filemon, lembra que Marcos é seu companheiro e cooperador do Evangelho.'},
+      ],
+      obras:['Evangelho de Marcos'],
+      fontes:[
+        {t:'Primícias do Reino — Posfácio', s:'Amélia Rodrigues / Divaldo Franco'},
+        {t:'Quando Voltar a Primavera — Proginasma histórico', s:'Amélia Rodrigues / Divaldo Franco'},
+        {t:'Vida e Atos dos Apóstolos — Os Apóstolos Marcos e Barnabé', s:'Cairbar Schutel'},
+        {t:'Paulo e Estêvão — cap. IV', s:'Emmanuel / Francisco Cândido Xavier'},
+      ]
+    },
+    {
+      id:'matias',
+      inicial:'M',
+      nome:'Matias',
+      sub:'O Décimo Terceiro',
+      datas:'séc. I d.C.',
+      origem:'Judeia',
+      papel:'Apóstolo · Substituto de Judas Iscariotes',
+      foto:null,
+      icon:'cross',
+      sections:[
+        {titulo:'Escolhido por Sortes',
+         texto:'Matias ingressara no Colégio Apostólico, após o lançamento de "sortes", por inspiração superior, cuja escolha fora recebida por unanimidade. "É necessário, pois, que dos homens que nos acompanharam todo o tempo em que o Senhor Jesus viveu entre nós, começando desde o batismo de João, até o dia em que dentre nós foi recebido em cima, um destes se torne testemunha conosco da sua ressurreição." (Atos 1:21–22)'},
+        {titulo:'Embaixador da Esperança',
+         texto:'Matias, que substituiria Judas depois da tragédia da Cruz, ao ver o Mestre chegar, acercou-se com os demais e falou, exultante: "Mestre, trazemos o coração rico de alegria, como a tâmara madura, encharcada de mel." O Mestre respondeu: "Felizes, vós que pudestes amanhar o solo dos Espíritos!"'},
+        {titulo:'Pentecostes e Martírio',
+         texto:'Após elegerem Matias para o lugar de Judas e receberem o Espírito Santo, desataram-se as percepções obnubiladas até aquela hora e lucidez inusitada os dominou. Podiam fitar os horizontes infinitos do futuro e experimentar gáudio descomunal no exercício do bem e da renúncia. André foi também crucificado em Patras, assim como crucificados Simão, o Zelote, e Matias.'},
+      ],
+      obras:['Atos 1:21–26 (escolha)'],
+      fontes:[
+        {t:'Primícias do Reino — cap. 10 e cap. 18', s:'Amélia Rodrigues / Divaldo Franco'},
+        {t:'Luz do Mundo — cap. 23', s:'Amélia Rodrigues / Divaldo Franco'},
+        {t:'A Mensagem do Amor Imortal — cap. 23', s:'Amélia Rodrigues / Divaldo Franco'},
+      ]
+    }
+  ];
+
+  const iconSvg={
+    book:`<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="4" width="18" height="24" rx="2"/><line x1="9" y1="10" x2="19" y2="10"/><line x1="9" y1="15" x2="19" y2="15"/><line x1="9" y1="20" x2="15" y2="20"/></svg>`,
+    scroll:`<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 6c0-2 3-2 3 0v20c0 2 3 2 3 0"/><rect x="8" y="4" width="16" height="24" rx="2"/><line x1="12" y1="11" x2="20" y2="11"/><line x1="12" y1="16" x2="20" y2="16"/></svg>`,
+    cross:`<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><line x1="16" y1="4" x2="16" y2="28"/><line x1="8" y1="12" x2="24" y2="12"/></svg>`
+  };
+
+  const cards=ev.map(p=>`
+    <div class="ev-card">
+      <div class="ev-aside">
+        <div class="ev-icon">${iconSvg[p.icon]||iconSvg.cross}</div>
+        <div class="ev-meta">
+          <div class="ev-sub">${p.sub}</div>
+          <h2 class="ev-nome">${p.nome}</h2>
+          <div class="ev-datas">${p.datas} · ${p.origem}</div>
+          <div class="ev-papel">${p.papel}</div>
+        </div>
+        <div class="ev-obras">
+          <div class="ev-obras-label">Obras</div>
+          <ul>${p.obras.map(o=>`<li>${o}</li>`).join('')}</ul>
+        </div>
+        <div class="ev-fontes">
+          <div class="ev-obras-label">Fontes espíritas</div>
+          ${p.fontes.map(f=>`<div class="ev-fonte-item"><em>${f.t}</em><span>${f.s}</span></div>`).join('')}
+        </div>
+      </div>
+      <div class="ev-body">
+        ${p.sections.map((s,i)=>`
+          <div class="ev-section">
+            <h3><span class="ev-num">${['I','II','III'][i]}</span>${s.titulo}</h3>
+            <p>${s.texto}</p>
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+
+  return `<section class="block"><div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Evangelistas e Colaboradores Apostólicos</span>
+      <h2>Lucas, Marcos e Matias</h2>
+      <p>Figuras que ampliaram o colégio e registraram os feitos de Jesus — fontes das obras espíritas que fundamentam este estudo.</p>
+    </div>
+    ${cards}
+    <div style="text-align:center;margin-top:8px"><a class="backlink" data-nav href="#inicio">← Início</a></div>
+  </div></section>`;
+}
+
 /* =========================================================
    ROTEADOR
 ========================================================= */
@@ -2118,6 +2289,7 @@ function render(hash){
   else if(hash==='pregacao') html=pregacaoView();
   else if(hash==='circulos') html=circulosView();
   else if(hash==='autores') html=autoresView();
+  else if(hash==='evangelistas') html=evangelistasView();
   else { hash='inicio'; html=homeView(); }
 
   main.innerHTML = `<div class="view active">${html}</div>`;
