@@ -210,6 +210,24 @@
   .mplate{width:74px;height:74px;flex-shrink:0;background:linear-gradient(145deg,#E0D0A8,#C8B882);border:1px solid #B8A070;border-radius:4px;}
   .mplate svg{width:100%;height:100%;display:block;}
 
+  /* ====== OS DOZE ====== */
+  .names-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:apostle;}
+  .name-card{display:block;background:var(--argila);border:1px solid var(--areia);border-radius:4px;padding:18px 20px;text-decoration:none;color:inherit;position:relative;counter-increment:apostle;cursor:pointer;transition:box-shadow .2s;}
+  .name-card:hover{box-shadow:0 0 0 2px var(--ouro);}
+  .name-card::before{content:counter(apostle);position:absolute;top:14px;right:16px;font-family:'Cinzel Decorative',serif;font-size:1.5rem;color:var(--ouro);opacity:.35;line-height:1;}
+  .name-card .nm{font-family:'Cinzel',serif;font-size:1.08rem;font-weight:600;color:var(--pedra);padding-right:28px;line-height:1.2;}
+  .name-card .etim{font-size:.82rem;color:var(--tinta-suave);margin-top:6px;line-height:1.45;}
+  .name-card .tag{font-size:.72rem;letter-spacing:.08em;color:var(--ouro);margin-top:8px;text-transform:uppercase;}
+
+  /* ====== MARTÍRIOS ====== */
+  .marty{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .mgroup{background:var(--argila);border:1px solid var(--areia);border-radius:4px;padding:18px 20px;}
+  .mh{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
+  .mh-info .mlabel{font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro);margin-bottom:2px;}
+  .mh-info b{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--pedra);display:block;}
+  .mn{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+  .mn span{background:var(--pedra);color:#E8D4A0;font-family:'Cinzel',serif;font-size:.72rem;padding:4px 12px;border-radius:2px;letter-spacing:.06em;}
+
   /* map captions */
   .mapcaption{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin:4px 0 14px;}
   .mapcaption .k{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ouro);}
