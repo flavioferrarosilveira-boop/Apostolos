@@ -871,9 +871,7 @@ const PLACES={
   macedonia:{n:'Macedônia',x:251,y:169,p:'Macedônia do Norte'},
   beocia:{n:'Beócia (Grécia)',x:255,y:192,p:'Grécia'},
   alexandria:{n:'Alexandria',x:289,y:248,p:'Egito'},
-  magdala:{n:'Magdala (Mar da Galileia)',x:338,y:232,p:'Israel'},
-  efeso_f:{n:'Éfeso',x:281,y:190,p:'Turquia'},
-  provenca:{n:'Provença (França)',x:138,y:141,p:'França'}
+  magdala:{n:'Magdala (Mar da Galileia)',x:338,y:232,p:'Israel'}
 };
 const DEATHPLACE={pedro:'roma',andre:'patras','tiago-maior':'jerusalem',joao:'efeso',felipe:'hierapolis',
   bartolomeu:'albana',mateus:'etiopia',tome:'india','tiago-menor':'jerusalem','simao-zelote':'britania',
@@ -2261,7 +2259,7 @@ const EV=[
   },
   { id:'madalena', nome:'Maria Madalena', ep:'A Rediviva de Magdala', epíteto:'Primeira testemunha da Ressurreição',
     origem:{cidade:'Magdala', regiao:'Galileia'},
-    death:'natural', deathplace:'provenca',
+    death:'natural', deathplace:'efeso',
     gen:{pai:null, mae:null, irmaos:[]},
     nascimento:[
       {t:'Magdala era um centro de comércio e indústria de muita prosperidade. Para lá acorriam mercadores e aventureiros de todo o Oriente. Reclinada sobre as bordas do mar, gozava de clima ameno e desfrutava de águas piscosas privilegiadas. Estação de repouso, recebia viajantes ilustres e nobres gregos, romanos, babilônios, fenícios, medos.', s:'Primícias do Reino — cap. 17 · Amélia Rodrigues / Divaldo Franco'},
@@ -2281,7 +2279,7 @@ const EV=[
       {ref:'Mateus 28:1-10', t:'Com Maria, mãe de Tiago, vai ao sepulcro; anjo anuncia a Ressurreição.'},
       {ref:'Atos 1:6-8', t:'Entre os presentes antes da Ascensão, aguardando a promessa do Espírito Santo.'},
     ],
-    rota:['magdala','jerusalem','egito','efeso_f'],
+    rota:['magdala','jerusalem','egito','efeso'],
     obras:['Testemunha da Ressurreição (tradição oral)', 'Discípula missionária entre os leprosos da Judeia'],
     texto:`<p class="src">Primícias do Reino — cap. 17, «A Rediviva de Magdala» · Amélia Rodrigues / Divaldo Franco</p>
 <p>A emoção desbordava em lágrimas, enquanto sentada à entrada do sepulcro aberto na rocha, conjecturava: que acontecera? Para onde O teriam levado e por que O trasladaram daqueles sítios, no silêncio da noite?</p>
