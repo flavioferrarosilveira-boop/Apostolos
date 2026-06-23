@@ -338,6 +338,84 @@
      breakpoints: 900 | 680 | 420
   ==================================================== */
 
+  /* ====== OS DOZE — grid de nomes ====== */
+  .names-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+    counter-reset:apostle;margin-bottom:36px;
+  }
+  .name-card{
+    background:var(--argila);border:1px solid var(--areia);border-radius:4px;
+    padding:20px 18px;box-shadow:var(--sombra-pedra);
+    display:flex;flex-direction:column;gap:6px;
+    counter-increment:apostle;position:relative;
+    transition:transform .18s,box-shadow .18s;
+    cursor:pointer;text-decoration:none;color:inherit;
+  }
+  .name-card::before{
+    content:counter(apostle);
+    position:absolute;top:14px;right:16px;
+    font-family:'Cinzel Decorative',serif;font-size:1.5rem;font-weight:700;
+    color:var(--ouro);opacity:.35;line-height:1;
+  }
+  .name-card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(28,16,4,.18);}
+  .name-card .nm{font-family:'Cinzel',serif;font-size:1.06rem;font-weight:700;color:var(--pedra);line-height:1.15;padding-right:28px;}
+  .name-card .etim{font-size:.82rem;color:var(--tinta-suave);font-style:italic;line-height:1.35;}
+  .name-card .tag{
+    display:inline-block;align-self:flex-start;
+    font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+    font-family:'Cinzel',serif;color:var(--ouro);
+    border-top:1px solid var(--linha);padding-top:6px;margin-top:2px;width:100%;
+  }
+
+  /* ====== MARTÍRIOS — layout visual ====== */
+  .marty{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+    margin-bottom:36px;
+  }
+  .mgroup{
+    background:var(--argila);border:1px solid var(--areia);border-radius:4px;
+    padding:18px 20px;box-shadow:var(--sombra-pedra);
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .mh{display:flex;align-items:center;gap:14px;}
+  .mh-info{flex:1;}
+  .mh-info .mlabel{
+    font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--ouro);
+  }
+  .mh-info b{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--pedra);display:block;margin-top:2px;}
+  .mplate{width:64px;height:64px;flex-shrink:0;
+    background:linear-gradient(145deg,#E0D0A8,#C8B882);
+    border:1px solid #B8A070;border-radius:4px;
+    box-shadow:inset 0 2px 5px rgba(90,60,10,.14),inset 0 -2px 3px rgba(255,255,255,.45);}
+  .mplate svg{width:100%;height:100%;display:block;}
+  .mn{display:flex;flex-wrap:wrap;gap:6px;}
+  .mn span{
+    background:var(--pedra);color:#E8D4A0;
+    font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.06em;
+    padding:4px 12px;border-radius:2px;border:1px solid rgba(196,148,58,.3);
+  }
+
+  /* ====== NAMES-LIST legado (mantido para compat) ====== */
+  .names-list{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:8px;}
+  .names-list li{
+    position:relative;padding:13px 18px 13px 58px;
+    background:var(--argila);border:1px solid var(--areia);border-radius:3px;
+    box-shadow:var(--sombra);counter-increment:names;
+  }
+  .names-list li::before{
+    content:counter(names);
+    position:absolute;left:12px;top:50%;transform:translateY(-50%);
+    width:28px;height:28px;border-radius:50%;
+    background:var(--pedra);color:var(--ouro-claro);
+    font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;line-height:1;
+  }
+  .names-list{counter-reset:names;}
+  .names-list b{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--pedra);}
+  .names-list span{display:block;font-size:.92rem;color:var(--tinta-suave);font-style:italic;margin-top:2px;}
+
+
   /* ---- 900px: tablets ---- */
   @media(max-width:900px){
     .apgrid{grid-template-columns:repeat(2,1fr);}
@@ -345,6 +423,7 @@
     .panel.full{grid-column:1;}
     .circles{grid-template-columns:1fr;}
     .marty{grid-template-columns:1fr;}
+    .names-grid{grid-template-columns:repeat(2,1fr);}
     .grow{grid-template-columns:1fr;gap:6px;margin-bottom:20px;}
     .gaxis{display:none;}
     .gtrack{height:18px;}
@@ -529,6 +608,8 @@
 
     .names-list li{padding:11px 12px 11px 46px;}
     .names-list li::before{width:24px;height:24px;font-size:.82rem;left:10px;}
+    .names-grid{grid-template-columns:1fr;}
+    .name-card::before{font-size:1.2rem;}
 
     .tnode{padding:5px 12px;font-size:.88rem;}
     .trow{gap:8px;}
@@ -1527,60 +1608,87 @@ function origensView(){
 
 function dozeView(){
   const list=[
-    ['Simão / Pedro','Shim’on (“aquele que ouve”); Kepa / Cefas em aramaico; Petros, “pedra”, em grego.'],
-    ['André','Andréas (grego, “viril”), irmão de Pedro, filho de Jonas.'],
-    ['Tiago, o Maior','Ja’akov (hebraico), filho de Zebedeu e de Salomé; chamado Boanerges, “filho do trovão”.'],
-    ['João','Johanan / Iokanan (hebraico); ao lado de Tiago, chamado por Jesus de Boanerges.'],
-    ['Filipe','Filippos (grego, “apreciador de cavalos”).'],
-    ['Bartolomeu','Do aramaico bar talmai, “filho de Tolmai”; também chamado Natanael.'],
-    ['Mateus / Levi','Mattai (hebraico, “dom de Iahweh”), o publicano.'],
-    ['Tomé','Toma (aramaico, “gêmeo”); em grego, Didymos.'],
-    ['Tiago, o Menor','Ja’akov, dito o Menor, filho de Alfeu.'],
-    ['Simão, o Zelote','O nacionalista, o cananeu.'],
-    ['Judas Tadeu','Taddai (hebraico).'],
-    ['Judas Iscariotes','Filho de Simão, originário de Kerioth.']
+    {id:'pedro',      nome:'Simão Pedro',        ep:'A Pedra — Cefas',      etim:'"Shim’on" (aramaico, "aquele que ouve") · Kepa/Cefas · Petros, "pedra" (grego)',    orig:'Betsaida, Galileia'},
+    {id:'andre',      nome:'André',              ep:'O Chamado',            etim:'"Andréas" (grego, "viril, corajoso") · irmão de Simão Pedro, filho de Jonas',            orig:'Betsaida, Galileia'},
+    {id:'tiago-maior',nome:'Tiago, o Maior',  ep:'Filho do Trovão',      etim:'"Ja’akov" (hebraico) · Boanerges · filho de Zebedeu e Salomé',                         orig:'Betsaida, Galileia'},
+    {id:'joao',       nome:'João',               ep:'O Amado',              etim:'"Johanan" (hebraico, "Deus é graça") · Boanerges, ao lado de Tiago',                   orig:'Betsaida, Galileia'},
+    {id:'felipe',     nome:'Filipe',             ep:'O Grego',              etim:'"Filippos" (grego, "apreciador de cavalos") · evangelizador dos gentìos',              orig:'Betsaida, Galileia'},
+    {id:'bartolomeu', nome:'Bartolomeu',        ep:'Natanael',             etim:'Bar talmai (aramaico, "filho de Tolmai/Ptolomeu") · também chamado Natanael',                    orig:'Caná, Galileia'},
+    {id:'mateus',     nome:'Mateus / Levi',      ep:'O Publicano',          etim:'"Mattai" (hebraico, "dom de Iahweh") · filho de Alfeu · cobrador de impostos',        orig:'Cafarnaum, Galileia'},
+    {id:'tome',       nome:'Tomé',               ep:'O Gêmeo',              etim:'"Toma" (aramaico, "gêmeo") · em grego, Didymos · missionário da Índia',              orig:'Galileia'},
+    {id:'tiago-menor',nome:'Tiago, o Menor',  ep:'Filho de Alfeu',       etim:'"Ja’akov Mikra" (hebraico) · dito Menor para diferenciá-lo do maior',                     orig:'Galileia'},
+    {id:'simao-zelote',nome:'Simão, o Zelote',ep:'O Cananeu',            etim:'Do aramaico "Kananaios" · Zelotes (grego) · ex-membro do partido dos Zelotes',                  orig:'Caná (?), Galileia'},
+    {id:'judas-tadeu',nome:'Judas Tadeu',      ep:'Lebeu',                etim:'"Taddai" (hebraico) · também Judas de Tiago · autor da Epístola de Judas',                     orig:'Galileia'},
+    {id:null,         nome:'Judas Iscariotes',   ep:'O Traidor',            etim:'"Ish-Qeriyyot" (homem de Kerioth) · filho de Simão · único não galileu',                       orig:'Kerioth, Judeia'},
   ];
+  const card=a=>{
+    const link=a.id?`href="#ap-${a.id}" data-nav`:'';
+    const isJudas=a.nome.includes('Iscariotes');
+    return `<a class="name-card${isJudas?' betrayer':''}" ${link} style="${isJudas?'border-color:#c8b0b0;background:#f9f0f0;':''}">
+      <div class="nm">${a.nome}</div>
+      <div class="etim">${a.etim}</div>
+      <div class="tag">${a.ep} · ${a.orig}</div>
+    </a>`;
+  };
   return `<section class="block"><div class="wrap">
     <div class="section-head"><span class="eyebrow">Evangelho de Mateus 10:2 a 4</span>
       <h2>Os doze nomes</h2>
-      <p>Significado e origem dos nomes, segundo as informações complementares reunidas no estudo.</p>
+      <p>Etimologia, epítetos e origem de cada apóstolo. Clique em um card para ver a síntese completa.</p>
     </div>
-    <ol class="names-list">
-      ${list.map(n=>`<li><b>${n[0]}</b><br><span>${n[1]}</span></li>`).join('')}
-    </ol>
-    <div style="text-align:center"><a class="backlink" data-nav href="#inicio">← Início</a></div>
+    <div class="names-grid">
+      ${list.map(card).join('')}
+    </div>
+    ${gospelsDiagram()}
+    <div style="text-align:center;margin-top:36px"><a class="backlink" data-nav href="#inicio">← Início</a></div>
   </div></section>`;
 }
-
 function martiriosView(){
   const groups=[
-    ['cruz',['Pedro','André','Felipe','Bartolomeu','Simão, o Zelote']],
-    ['decep',['Tiago, o Maior']],
-    ['pedra',['Tiago, o Menor']],
-    ['flecha',['Judas Tadeu']],
-    ['lanca',['Tomé']],
-    ['suic',['Judas Iscariotes']],
-    ['natural',['João']],
-    ['nd',['Mateus']]
+    {tipo:'cruz',   nomes:['Pedro',    'André',    'Felipe', 'Bartolomeu', 'Simão, o Zelote'],
+      desc:'A crucificação era a morte reservada aos escravos e criminosos. Para os apóstolos, morrer como Jesus foi o testemunho supremo da fé.'},
+    {tipo:'decep',  nomes:['Tiago, o Maior'],
+      desc:'Primeiro mártir entre os apóstolos. Decapitado por Herodes Agripa por volta do ano 44 d.C.'},
+    {tipo:'pedra',  nomes:['Tiago, o Menor'],
+      desc:'Lançado do pínacle do Templo e apedrejado no ano 62 d.C. em Jerusalém.'},
+    {tipo:'flecha', nomes:['Judas Tadeu'],
+      desc:'Martirizado no sul da Armênia, em Ardaze, com flechas.'},
+    {tipo:'lanca',  nomes:['Tomé'],
+      desc:'Golpeado a lança no sul da Índia, talvez em Malabar, onde pregou por anos.'},
+    {tipo:'suic',   nomes:['Judas Iscariotes'],
+      desc:'Arrependido da traição, devolveu as trinta moedas e pôs fim à própria vida (Mt 27:3–5).'},
+    {tipo:'natural', nomes:['João'],
+      desc:'"Poupado por amar demais." Único entre os doze que não sofreu martírio. Desencarnou em Éfeso próximo aos 100 anos.'},
+    {tipo:'nd',     nomes:['Mateus'],
+      desc:'Pregou no Egito e na Etíopia. As fontes divergem sobre a forma do seu martírio.'},
   ];
+  const quote='"Os apóstolos, tão frágeis no início, no curso do tempo alcançariam o apogeu na renúncia à própria vida, oferecendo-a como láurea final de devotamento."';
+  const src='Da Manjedoura a Emaús, cap. 14 — Emmanuel / Chico Xavier';
   return `<section class="block"><div class="wrap">
     <div class="section-head"><span class="eyebrow">Local, forma e morte</span>
       <h2>Os testemunhos finais</h2>
-      <p>“Os apóstolos, tão frágeis no início, no curso do tempo alcançariam o apogeu na renúncia à própria vida, oferecendo-a como láurea final de devotamento.”</p>
+      <p>${quote}</p>
     </div>
     <div class="marty">
-      ${groups.map(g=>{const d=DEATH[g[0]];return `
+      ${groups.map(g=>{const d=DEATH[g.tipo];return `
         <div class="mgroup">
-          <div class="mh"><span class="mplate">${deathArt(g[0])}</span><b>${d.label}</b></div>
-          <div class="mn">${g[1].map(n=>`<span>${n}</span>`).join('')}</div>
+          <div class="mh">
+            <span class="mplate">${deathArt(g.tipo)}</span>
+            <div class="mh-info">
+              <div class="mlabel">Forma do martírio</div>
+              <b>${d.label}</b>
+            </div>
+          </div>
+          <p style="margin:0;font-size:.9rem;color:var(--tinta-suave);font-style:italic;">${g.desc}</p>
+          <div class="mn">${g.nomes.map(n=>`<span>${n}</span>`).join('')}</div>
         </div>`;}).join('')}
     </div>
-    <p style="text-align:center;font-style:italic;color:var(--tinta-suave);max-width:620px;margin:34px auto 0">
-      “Do grupo híbrido sai a nova humanidade a renovar e modificar a Terra. O Reino de Deus chegara à Terra dos homens e confraternizara com eles, em nome do amor.”</p>
+    <blockquote class="q" style="max-width:680px;margin:0 auto 16px">
+      <p>"Do grupo híbrido sai a nova humanidade a renovar e modificar a Terra. O Reino de Deus chegara à Terra dos homens e confraternizara com eles, em nome do amor."</p>
+      <cite>Luz do Mundo — Amélia Rodrigues / Divaldo Franco</cite>
+    </blockquote>
     <div style="text-align:center"><a class="backlink" data-nav href="#inicio">← Início</a></div>
   </div></section>`;
 }
-
 function pregacaoView(){
   // [id, nome, epíteto curto, ícone, regiões de pregação, martírio]
   const P=[
