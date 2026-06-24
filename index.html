@@ -10,24 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --pedra:#E8F0FF;          /* texto principal claro */
-    --pedra-2:#C8D8F0;
-    --ouro:#C8A86B;           /* ouro espírita */
-    --ouro-claro:#D4B87A;
-    --oliva:#A8C890;          /* verde-sálvia suave */
-    --papiro:#F8F4EC;         /* creme marfim quente */
-    --papiro-2:#F0EAD8;
-    --argila:#F5F0E8;         /* pergaminho claro */
-    --tinta:#1A1206;          /* texto escuro quente */
-    --tinta-suave:#3A2E1A;
-    --terracota:#D4A870;      /* âmbar dourado */
-    --areia:#C8A86B;          /* ouro */
-    --linha:#4A7AAA;
+    --pedra:#2C2010;          /* pedra escura */
+    --pedra-2:#3D3020;
+    --ouro:#C4943A;           /* folha de ouro antigo */
+    --ouro-claro:#D4A84B;
+    --oliva:#4A5C20;          /* oliva galileia */
+    --papiro:#F2E4B8;         /* papiro natural */
+    --papiro-2:#E8D5A0;
+    --argila:#F7EDD4;         /* argila clara */
+    --tinta:#1E1608;          /* tinta de carvão */
+    --tinta-suave:#5C4A2A;
+    --terracota:#9B4520;      /* terracota */
+    --areia:#C8A86B;          /* areia do deserto */
+    --linha:#C4A86A;
     --lapis:#1B3A6B;
-    --lapis-2:#2A5090;
-    --mar:#C8B890;            /* areia dourada suave */
-    --sombra:0 2px 4px rgba(13,26,46,.35), 0 8px 28px rgba(13,26,46,.3);
-    --sombra-pedra:inset 0 1px 0 rgba(255,255,255,.15), inset 0 -2px 0 rgba(0,0,0,.2), 0 4px 12px rgba(13,26,46,.4);
+    --lapis-2:#2A4F8A;
+    --mar:#2E6B5E;
+    --sombra:0 2px 4px rgba(28,16,4,.12), 0 8px 28px rgba(28,16,4,.1);
+    --sombra-pedra:inset 0 1px 0 rgba(255,255,255,.15), inset 0 -2px 0 rgba(0,0,0,.2), 0 4px 12px rgba(28,16,4,.2);
     --maxw:1080px;
   }
   /* ── contenção global de overflow ── */
@@ -39,14 +39,13 @@
   body{
     margin:0;
     font-family:'IM Fell English',Georgia,serif;
-    color:#D8E8F8;
-    background-color:#0D1A2E;
+    color:var(--tinta);
+    background-color:#E8D4A0;
     background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
-      radial-gradient(ellipse at 20% 10%, rgba(42,80,144,.35) 0%, transparent 55%),
-      radial-gradient(ellipse at 80% 90%, rgba(200,168,107,.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 50%, rgba(22,36,64,.8) 0%, transparent 80%),
-      linear-gradient(160deg, #0A1628 0%, #0D1A2E 40%, #0F1E35 70%, #0A1628 100%);
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"),
+      radial-gradient(ellipse at 0% 0%, rgba(196,148,58,.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 100% 100%, rgba(74,92,32,.12) 0%, transparent 55%),
+      linear-gradient(160deg, #F0DFA8 0%, #E4CFA0 35%, #DECA96 65%, #E8D5A4 100%);
     font-size:19px;
     line-height:1.7;
     -webkit-font-smoothing:antialiased;
@@ -69,31 +68,33 @@
   /* ====== HEADER / TEMPLO ====== */
   header.site{
     position:fixed;top:0;left:0;right:0;z-index:50;
-    background:linear-gradient(180deg,#0A1628 0%,#0D1A2E 100%);
-    color:#D8E8F8;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E"),
+      linear-gradient(180deg,#2A1E08 0%,#1E1608 100%);
+    color:#E8D4A0;
     border-bottom:3px solid transparent;
-    border-image:linear-gradient(90deg,transparent,#C8A86B 20%,#E0C880 50%,#C8A86B 80%,transparent) 1;
-    box-shadow:0 4px 32px rgba(0,0,0,.6), 0 1px 0 rgba(200,168,107,.25);
+    border-image:linear-gradient(90deg,transparent,#C4943A 20%,#D4A84B 50%,#C4943A 80%,transparent) 1;
+    box-shadow:0 4px 24px rgba(0,0,0,.4), 0 1px 0 rgba(196,148,58,.3);
   }
   header.site::before{
-    content:'';display:block;height:5px;
-    background:linear-gradient(90deg,
-      transparent 0%,
-      rgba(200,168,107,.3) 10%,
-      rgba(200,168,107,.9) 30%,
-      rgba(224,200,128,1) 50%,
-      rgba(200,168,107,.9) 70%,
-      rgba(200,168,107,.3) 90%,
-      transparent 100%
+    content:'';display:block;height:6px;
+    background:repeating-linear-gradient(
+      90deg,
+      #8B3A1C 0px,#8B3A1C 8px,
+      #C4943A 8px,#C4943A 16px,
+      #2C6B5C 16px,#2C6B5C 24px,
+      #C4943A 24px,#C4943A 32px,
+      #8B3A1C 32px,#8B3A1C 40px,
+      #D4A84B 40px,#D4A84B 48px
     );
+    opacity:.85;
   }
   .topbar{display:flex;align-items:center;gap:12px;height:62px;}
-  .brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#D8E8F8;flex-shrink:0;}
+  .brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#E8D4A0;flex-shrink:0;}
   .brand .seal{flex-shrink:0;}
   .brand .bt{display:flex;flex-direction:column;line-height:1;}
-  .brand .bt b{font-family:'Cinzel',serif;font-size:1.14rem;font-weight:600;letter-spacing:.06em;color:#E8F0FF;}
+  .brand .bt b{font-family:'Cinzel',serif;font-size:1.14rem;font-weight:600;letter-spacing:.06em;color:#F2E4B8;}
   .brand .bt span{font-size:1.14rem;letter-spacing:.06em;text-transform:none;color:var(--ouro-claro);margin-top:2px;font-family:'Cinzel',serif;font-weight:600;}
-  .brand-title-center{flex:1;text-align:center;font-family:'Cinzel',serif;font-size:.88rem;font-weight:600;letter-spacing:.05em;color:#C8D8F0;line-height:1.3;padding:0 12px;}
   .topnav-wrap{background:rgba(0,0,0,.2);border-top:1px solid rgba(196,148,58,.15);}
   .topnav{display:flex;flex-wrap:wrap;gap:3px;padding:6px 16px;align-items:center;justify-content:center;}
   .topnav a{
@@ -476,7 +477,6 @@
     .brand{gap:9px;}
     .brand .seal svg{width:34px;height:34px;}
     .brand .bt b,.brand .bt span{font-size:.96rem;}
-    .brand-title-center{font-size:.78rem;}
 
     /* hero */
     .hero h1{font-size:clamp(2rem,8vw,3rem);}
@@ -640,7 +640,6 @@
 
     /* brand */
     .brand .bt b,.brand .bt span{font-size:.82rem;}
-    .brand-title-center{display:none;}
     .brand .seal svg{width:30px;height:30px;}
 
     /* os doze */
@@ -693,17 +692,18 @@
   <div class="wrap topbar">
     <a class="brand" href="#inicio" data-nav>
       <span class="seal">
+        <!-- Símbolo do peixe (ichtys) + âncora: iconografia cristã primitiva -->
         <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
-          <circle cx="21" cy="21" r="19.5" stroke="#C8A86B" stroke-width="2.2"/>
-          <circle cx="21" cy="21" r="15" stroke="#C8A86B" stroke-width=".8" opacity=".4"/>
-          <path d="M11 21c0 0 5-7 10-7s10 7 10 7s-5 7-10 7s-10-7-10-7z" stroke="#D4B87A" stroke-width="1.5" fill="none"/>
-          <path d="M31 21 l4-4 l-4 4 l4 4" stroke="#D4B87A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="16" cy="20" r="1.5" fill="#D4B87A"/>
+          <circle cx="21" cy="21" r="19.5" stroke="#C4943A" stroke-width="2.2"/>
+          <circle cx="21" cy="21" r="15" stroke="#C4943A" stroke-width=".8" opacity=".4"/>
+          <!-- peixe estilizado -->
+          <path d="M11 21c0 0 5-7 10-7s10 7 10 7s-5 7-10 7s-10-7-10-7z" stroke="#D4A84B" stroke-width="1.5" fill="none"/>
+          <path d="M31 21 l4-4 l-4 4 l4 4" stroke="#D4A84B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="20" r="1.5" fill="#D4A84B"/>
         </svg>
       </span>
       <span class="bt"><b>Síntese dos Apóstolos</b><span>segundo o Espiritismo</span></span>
     </a>
-    <span class="brand-title-center">Informações dos Apóstolos através das Obras Espíritas</span>
     <button class="burger" aria-label="Menu" id="burger">☰</button>
   </div>
   <div class="topnav-wrap">
@@ -730,15 +730,17 @@
 <footer>
   <span class="seal">
     <svg width="52" height="52" viewBox="0 0 42 42" fill="none">
-      <circle cx="21" cy="21" r="19.5" stroke="#C8A86B" stroke-width="2.2"/>
-      <circle cx="21" cy="21" r="15" stroke="#C8A86B" stroke-width=".8" opacity=".4"/>
-      <path d="M11 21c0 0 5-7 10-7s10 7 10 7s-5 7-10 7s-10-7-10-7z" stroke="#D4B87A" stroke-width="1.5" fill="none"/>
-      <path d="M31 21 l4-4 l-4 4 l4 4" stroke="#D4B87A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="16" cy="20" r="1.5" fill="#D4B87A"/>
+      <circle cx="21" cy="21" r="19.5" stroke="#C4943A" stroke-width="2.2"/>
+      <circle cx="21" cy="21" r="15" stroke="#C4943A" stroke-width=".8" opacity=".4"/>
+      <path d="M11 21c0 0 5-7 10-7s10 7 10 7s-5 7-10 7s-10-7-10-7z" stroke="#D4A84B" stroke-width="1.5" fill="none"/>
+      <path d="M31 21 l4-4 l-4 4 l4 4" stroke="#D4A84B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="16" cy="20" r="1.5" fill="#D4A84B"/>
     </svg>
   </span>
+  <h4>Síntese dos Apóstolos</h4>
+  <h4 style="color:var(--ouro);margin-top:4px;">segundo o Espiritismo</h4>
   <p>Compilação de informações sobre os apóstolos extraídas de obras espíritas — Humberto de Campos e Emmanuel (por Chico Xavier), Amélia Rodrigues (por Divaldo Franco), entre outros — complementada por fontes bíblicas e históricas.</p>
-  <div class="by" style="text-align:center;">Organização: Flávio Antônio Ferraro da Silveira · 2026<br><a href="mailto:flavioferrarosilveira@gmail.com" style="color:var(--ouro);text-decoration:none;font-size:.82rem;">flavioferrarosilveira@gmail.com</a></div>
+  <div class="by">Organização: Flávio Antônio Ferraro da Silveira · 2026</div>
 </footer>
 
 <script>
