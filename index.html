@@ -92,8 +92,10 @@
   .topbar{display:flex;align-items:center;gap:12px;height:62px;}
   .brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#E8D4A0;flex-shrink:0;}
   .brand .seal{flex-shrink:0;}
-  .brand .bt{display:flex;flex-direction:column;line-height:1.25;}
-  .brand .bt b{font-family:'Cinzel',serif;font-size:.98rem;font-weight:600;letter-spacing:.04em;color:#F2E4B8;}
+  .brand .bt{display:flex;flex-direction:column;line-height:1;}
+  .brand .bt b{font-family:'Cinzel',serif;font-size:1.14rem;font-weight:600;letter-spacing:.06em;color:#F2E4B8;}
+  .brand .bt span{font-size:1.14rem;letter-spacing:.06em;text-transform:none;color:var(--ouro-claro);margin-top:2px;font-family:'Cinzel',serif;font-weight:600;}
+  .brand-title-center{flex:1;text-align:center;font-family:'Cinzel',serif;font-size:.88rem;font-weight:600;letter-spacing:.05em;color:#D4C090;line-height:1.3;padding:0 12px;}
   .topnav-wrap{background:rgba(0,0,0,.2);border-top:1px solid rgba(196,148,58,.15);}
   .topnav{display:flex;flex-wrap:wrap;gap:3px;padding:6px 16px;align-items:center;justify-content:center;}
   .topnav a{
@@ -475,7 +477,8 @@
     /* brand */
     .brand{gap:9px;}
     .brand .seal svg{width:34px;height:34px;}
-    .brand .bt b{font-size:.86rem;}
+    .brand .bt b,.brand .bt span{font-size:.96rem;}
+    .brand-title-center{font-size:.78rem;}
 
     /* hero */
     .hero h1{font-size:clamp(2rem,8vw,3rem);}
@@ -638,7 +641,8 @@
     .mplate{width:46px;height:46px;}
 
     /* brand */
-    .brand .bt b{font-size:.76rem;}
+    .brand .bt b,.brand .bt span{font-size:.82rem;}
+    .brand-title-center{display:none;}
     .brand .seal svg{width:30px;height:30px;}
 
     /* os doze */
@@ -701,8 +705,9 @@
           <circle cx="16" cy="20" r="1.5" fill="#D4A84B"/>
         </svg>
       </span>
-      <span class="bt"><b>Informações dos Apóstolos através das Obras Espíritas</b></span>
+      <span class="bt"><b>Síntese dos Apóstolos</b><span>segundo o Espiritismo</span></span>
     </a>
+    <span class="brand-title-center">Informações dos Apóstolos através das Obras Espíritas</span>
     <button class="burger" aria-label="Menu" id="burger">☰</button>
   </div>
   <div class="topnav-wrap">
