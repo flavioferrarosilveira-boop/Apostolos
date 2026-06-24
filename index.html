@@ -95,7 +95,9 @@
   .brand .bt{display:flex;flex-direction:column;line-height:1;}
   .brand .bt b{font-family:'Cinzel',serif;font-size:1.14rem;font-weight:600;letter-spacing:.06em;color:#F2E4B8;}
   .brand .bt span{font-size:1.14rem;letter-spacing:.06em;text-transform:none;color:var(--ouro-claro);margin-top:2px;font-family:'Cinzel',serif;font-weight:600;}
-  .topnav{margin-left:auto;display:flex;gap:4px;flex-wrap:nowrap;align-items:center;}
+  .topnav-wrap{background:rgba(0,0,0,.2);border-top:1px solid rgba(196,148,58,.15);overflow-x:auto;scrollbar-width:none;}
+  .topnav-wrap::-webkit-scrollbar{display:none;}
+  .topnav{display:flex;gap:4px;padding:5px 16px;align-items:center;}
   .topnav a{
     flex-shrink:0;text-decoration:none;cursor:pointer;
     font-family:'Cinzel',serif;font-size:.78rem;color:#C8A86B;
@@ -118,7 +120,7 @@
   .chip.on{color:#1E1608;background:var(--ouro-claro);border-color:var(--ouro);}
 
   /* ====== VIEWS ====== */
-  main{min-height:60vh;padding-top:75px;}
+  main{min-height:60vh;padding-top:145px;}
   .view{display:none;animation:rise .5s ease both;}
   .view.active{display:block;}
   @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
@@ -419,7 +421,7 @@
 
   /* ── tablet/mobile: burger menu ── */
   @media(max-width:900px){
-    .topnav{display:none;}
+    .topnav-wrap{display:none;}
     .topnav.open{
       display:flex;
       position:fixed;top:auto;left:0;right:0;
@@ -431,8 +433,10 @@
       z-index:199;
       box-shadow:0 8px 24px rgba(0,0,0,.5);
     }
+    .topnav-wrap.open{display:block;}
     .topnav.open a{padding:13px 10px;border-radius:3px;font-size:.84rem;display:block;letter-spacing:.18em;}
     .burger{display:block;}
+    main{padding-top:75px;}
   }
 
   @media(max-width:900px){
@@ -702,6 +706,8 @@
       <span class="bt"><b>Síntese dos Apóstolos</b><span>segundo o Espiritismo</span></span>
     </a>
     <button class="burger" aria-label="Menu" id="burger">☰</button>
+  </div>
+  <div class="topnav-wrap">
     <nav class="topnav" id="topnav">
       <a href="#inicio" data-nav>Início</a>
       <a href="#boanava" data-nav>Boa Nova</a>
@@ -3080,7 +3086,9 @@ function render(hash){
     l.classList.toggle('on', l.getAttribute('href')==='#'+hash);
   });
   // fecha menu mobile
-  document.getElementById('topnav').classList.remove('open');
+  const _nav=document.getElementById('topnav');
+  _nav.classList.remove('open');
+  _nav.closest('.topnav-wrap').classList.remove('open');
 }
 
 document.addEventListener('click', e=>{
@@ -3095,8 +3103,9 @@ document.addEventListener('click', e=>{
 window.addEventListener('hashchange',()=>{ try{ render(location.hash); }catch(_){} });
 document.getElementById('burger').addEventListener('click',()=>{
   const nav = document.getElementById('topnav');
+  const wrap = nav.closest('.topnav-wrap');
   nav.classList.toggle('open');
-  // posiciona o menu logo abaixo do header
+  wrap.classList.toggle('open');
   if(nav.classList.contains('open')){
     const headerH = document.querySelector('header.site').getBoundingClientRect().bottom;
     nav.style.top = headerH + 'px';
@@ -3107,6 +3116,7 @@ document.addEventListener('click', e=>{
   const nav = document.getElementById('topnav');
   if(nav.classList.contains('open') && !e.target.closest('header.site')){
     nav.classList.remove('open');
+    nav.closest('.topnav-wrap').classList.remove('open');
   }
 }, true);
 
