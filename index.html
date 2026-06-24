@@ -872,7 +872,10 @@ const PLACES={
   macedonia:{n:'Macedônia',x:251,y:169,p:'Macedônia do Norte'},
   beocia:{n:'Beócia (Grécia)',x:255,y:192,p:'Grécia'},
   alexandria:{n:'Alexandria',x:289,y:248,p:'Egito'},
-  magdala:{n:'Magdala (Mar da Galileia)',x:338,y:232,p:'Israel'}
+  magdala:{n:'Magdala (Mar da Galileia)',x:338,y:232,p:'Israel'},
+  ain_karim:{n:'Ain Karim (Judeia)',x:332,y:241,p:'Israel'},
+  machaerus:{n:'Machaerus (Pereia)',x:341,y:246,p:'Jordânia'},
+  jordao:{n:'Rio Jordão',x:338,y:238,p:'Israel / Jordânia'}
 };
 const DEATHPLACE={pedro:'roma',andre:'patras','tiago-maior':'jerusalem',joao:'efeso',felipe:'hierapolis',
   bartolomeu:'albana',mateus:'etiopia',tome:'india','tiago-menor':'jerusalem','simao-zelote':'britania',
@@ -2313,6 +2316,52 @@ function autoresView(){
    DADOS DOS EVANGELISTAS / COLABORADORES
 ========================================================= */
 const EV=[
+  { id:'batista', nome:'João Batista', ep:'O Precursor', epíteto:'Voz que clama no deserto',
+    origem:{cidade:'Ain Karim', regiao:'Judeia'},
+    death:'decep', deathplace:'machaerus',
+    gen:{pai:'Zacarias', mae:'Isabel', irmaos:[]},
+    nascimento:[
+      {t:'João era filho de Zacarias, sacerdote da divisão de Abias, e de Isabel, ambos justos diante de Deus. Nasceu em Ain Karim, cidade da Judeia, seis meses antes de Jesus. Seu nascimento foi anunciado pelo anjo Gabriel a seu pai, que não podia crer — e por isso ficou mudo até o dia do nascimento do filho.', s:'Lucas 1:5-25 · 57-80'},
+      {t:'Dado às mais fundas meditações, apesar da pouca idade; encontrado entre as figueiras bravas ou caminhando ao longo das estradas adustas, como se a pequena fronte estivesse dominada por graves pensamentos — assim descrevia Isabel o filho a Maria, em visita a Nazaré.', s:'Boa Nova — Humberto de Campos / Chico Xavier'},
+    ],
+    morte:'João Batista foi preso por Herodes Antipas, por denunciar publicamente o casamento ilegal do tetrarca com Herodíades, esposa de seu irmão. Encarcerado na fortaleza de Machaerus, além do Jordão, foi decapitado a pedido de Salomé, filha de Herodíades, que exigiu sua cabeça numa bandeja em troca de sua dança diante do rei.',
+    morteq:[
+      {t:'Salomé representa a futilidade do mundo, Herodes e sua mulher o convencionalismo político e o interesse particular. João era a verdade, e a verdade, na sua tarefa de aperfeiçoamento, dilacera e magoa, deixando-se levar aos sacrifícios extremos.', s:'Boa Nova — Humberto de Campos / Chico Xavier'},
+      {t:'Como a dor que precede as poderosas manifestações da luz no íntimo dos corações, ela recebe o bloco de mármore bruto e lhe trabalha as asperezas para que a obra do amor surja, em sua pureza divina.', s:'Boa Nova — Humberto de Campos / Chico Xavier'},
+    ],
+    biblia:[
+      {ref:'Lucas 1:5-25', t:'O anjo Gabriel anuncia a Zacarias o nascimento de João; Zacarias fica mudo por incredulidade.'},
+      {ref:'Lucas 1:57-80', t:'Nascimento de João; Zacarias profetiza: "Tu, menino, serás chamado profeta do Altíssimo."'},
+      {ref:'Mateus 3:1-12', t:'"Preparai o caminho do Senhor!" — João batiza no Jordão e anuncia o que vem depois dele.'},
+      {ref:'Mateus 3:13-17', t:'João batiza Jesus no Jordão; a voz do Pai e o Espírito Santo em forma de pomba.'},
+      {ref:'João 1:29', t:'"Eis o Cordeiro de Deus, que tira o pecado do mundo!"'},
+      {ref:'Marcos 6:17-29', t:'Aprisionado por Herodes; Salomé exige sua cabeça; o precursor é decapitado em Machaerus.'},
+      {ref:'Mateus 11:11', t:'"Entre os nascidos de mulher, nenhum surgiu maior do que João Batista."'},
+    ],
+    rota:['ain_karim','jordao','machaerus'],
+    obras:['Missão de precursor: batismo de arrependimento no Jordão', 'Anunciou o Messias — "Eu o batizo com água, mas Ele vos batizará com o Espírito Santo"'],
+    texto:`<p class="src">Boa Nova — Humberto de Campos / Francisco Cândido Xavier</p>
+<p>Após a famosa apresentação de Jesus aos doutores do Templo de Jerusalém, Maria recebeu a visita de Isabel e de seu filho, em sua casinha pobre de Nazaré. Depois das saudações habituais, do desdobramento dos assuntos familiares, as duas primas entraram a falar de ambas as crianças, cujo nascimento fora antecipado por acontecimentos singulares e cercado de estranhas circunstâncias. Enquanto o patriarca José atendia às últimas necessidades diárias de sua oficina humilde, entretinham-se as duas em curiosa palestra, trocando carinhosamente as mais ternas confidências maternais.</p>
+<p><em>— O que me espanta — dizia Isabel com caricioso sorriso — é o temperamento de João, dado às mais fundas meditações, apesar da sua pouca idade. Não raro, procuro-o inutilmente em casa, para encontrá-lo, quase sempre, entre as figueiras bravas, ou caminhando ao longo das estradas adustas, como se a pequena fronte estivesse dominada por graves pensamentos.</em></p>
+<p><em>— Essas crianças, a meu ver — respondeu-lhe Maria, intensificando o brilho suave de seus olhos —, trazem para a Humanidade a luz divina de um caminho novo.</em></p>
+<p><em>— Meu filho também é assim, envolvendo-me o coração numa atmosfera de incessantes cuidados. Por vezes, vou encontrá-lo a sós, junto das águas, e, de outras, em conversação profunda com os viajantes que demandam a Samaria ou as aldeias mais distantes, nas adjacências do lago. Quase sempre, surpreendo-lhe a palavra caridosa que dirige às lavadeiras, aos transeuntes, aos mendigos sofredores... Fala de sua comunhão com Deus com uma eloquência que nunca encontrei nas observações dos nossos doutores e, contentemente, ando a cismar, em relação ao seu destino.</em></p>
+<p><em>— Apesar de todos os valores da crença — murmurou Isabel, convicta —, nós, as mães, temos sempre o espírito abalado por injustificáveis receios.</em></p>
+<p>Como se se deixasse empolgar por amorosos temores, Maria continuou:</p>
+<p><em>— Ainda há alguns dias, estivemos em Jerusalém, nas comemorações costumeiras, e a facilidade de argumentação com que Jesus elucidava os problemas, que lhe eram apresentados pelos orientadores do templo, nos deixou a todos receosos e perplexos. Sua ciência não pode ser deste mundo: vem de Deus, que certamente se manifesta por seus lábios amigos da pureza. Notando-lhe as respostas, Eleazar chamou a José, em particular, e o advertiu de que o menino parece haver nascido para a perdição de muitos poderosos em Israel.</em></p>
+<p><em>— Ciente desse aviso, procurei Eleazar, a fim de interceder por Jesus, junto de suas valiosas relações com as autoridades do templo. Pensei na sua infância desprotegida e receio pelo seu futuro. Eleazar prometeu interessar-se pela sua sorte; todavia, de regresso a Nazaré, experimentei singular multiplicação dos meus temores.</em></p>
+<p><em>— Conversei com José, mais detidamente, acerca do pequeno, preocupada com o seu preparo conveniente para a vida!... Entretanto, no dia que se seguiu às nossas íntimas confabulações, Jesus se aproximou de mim, pela manhã, e me interpelou: "Mãe, que queres tu de mim? Acaso não tenho testemunhado a minha comunhão com o Pai que está no Céu!"</em></p>
+<p><em>— Altamente surpreendida com a sua pergunta, respondi-lhe, hesitante: Tenho cuidado por ti, meu filho! Reconheço que necessitas de um preparo melhor para a vida... Mas, como se estivesse em pleno conhecimento do que se passava em meu íntimo, ponderou ele: "Mãe, toda preparação útil e generosa no mundo é preciosa; entretanto, eu já estou com Deus. Meu Pai, porém, deseja de nós toda a exemplificação que seja boa e eu escolherei, desse modo, a escola melhor."</em></p>
+<p><em>— No mesmo dia, embora soubesse das belas promessas que os doutores do templo fizeram na sua presença a seu respeito, Jesus aproximou-se de José e lhe pediu, com humildade, o admitisse em seus trabalhos. Desde então, como se nos quisesse ensinar que a melhor escola para Deus é a do lar e a do esforço próprio — concluiu a palavra materna com singeleza —, ele aperfeiçoa as madeiras da oficina, empunha o martelo e a enxó, enchendo a casa de ânimo, com a sua doce alegria!</em></p>
+<p>Isabel lhe escutava atenta a narrativa, e, depois de outras pequenas considerações materiais, ambas observaram que as primeiras sombras da noite desciam na paisagem, acinzentando o céu sem nuvens.</p>
+<p>A carpintaria já estava fechada e José buscava a serenidade do interior doméstico para o repouso.</p>
+<p>As duas mães se entreolharam, inquietas, e perguntavam a si próprias para onde teriam ido as duas crianças.</p>
+<p>Nazaré, com a sua paisagem, das mais belas de toda a Galiléia, é talvez o mais formoso recanto da Palestina. Suas ruas humildes e pedregosas, suas casas pequeninas, suas lojas singulares se agrupam numa ampla concavidade em cima das montanhas, ao norte do Esdrelon. Seus horizontes são estreitos e sem interesse; contudo, os que subam um pouco além, até onde se localizam as casinholas mais elevadas, encontrarão para o olhar assombrado as mais formosas perspectivas. O céu parece alongar-se, cobrindo o conjunto maravilhoso, numa dilatação infinita.</p>
+<p>Maria e Isabel avistaram seus filhos, lado a lado, sobre uma eminência banhada pelos derradeiros raios vespertinos. De longe, afigurou-se-lhes que os cabelos de Jesus esvoaçavam ao sopro caricioso das brisas do alto. Seu pequeno indicador mostrava a João as paisagens que se multiplicavam a distância, como um grande general que desse a conhecer as minudências dos seus planos a um soldado de confiança. Ante seus olhos surgiam as montanhas de Samaria, o cume de Magedo, as eminências de Gelboé, a figura esbelta do Tabor — onde, mais tarde, ficaria inesquecível o instante da Transfiguração —, o vale do rio sagrado do Cristianismo, os cumes de Safed, o golfo de Khalfa, o elevado cenário do Pereia, num soberbo conjunto de montes e vales, ao lado das águas cristalinas.</p>
+<p>Quem poderia saber qual a conversação solitária que se travara entre ambos? Distanciados no tempo, devemos presumir que fosse, na Terra, a primeira combinação entre o amor e a verdade, para a conquista do mundo. Sabemos, porém, que, na manhã imediata, em partindo o precursor na carinhosa companhia de sua mãe, perguntou Isabel a Jesus, com gracioso interesse: <em>— Não queres vir conosco?</em> ao que o pequeno carpinteiro de Nazaré respondeu, profeticamente, com inflexão de profunda bondade: <em>— João partirá primeiro.</em></p>
+<p>Transcorridos alguns anos, vamos encontrar o Batista na sua gloriosa tarefa de preparação do caminho à verdade, precedendo o trabalho divino do amor, que o mundo conheceria em Jesus-Cristo. João, de fato, partiu primeiro, a fim de executar as operações iniciais para grandiosa conquista. Vestido de peles e alimentando-se de mel selvagem, esclarecendo com energia e deixando-se degolar em testemunho à Verdade, ele precedeu a lição da misericórdia e da bondade.</p>
+<p>O Mestre dos mestres quis colocar a figura franca e áspera do seu profeta no limiar de seus gloriosos ensinos e, por isso, encontramos em João Batista um dos mais belos de todos os símbolos imortais do Cristianismo. Salomé representa a futilidade do mundo, Herodes e sua mulher o convencionalismo político e o interesse particular. João era a verdade, e a verdade, na sua tarefa de aperfeiçoamento, dilacera e magoa, deixando-se levar aos sacrifícios extremos.</p>
+<p>Como a dor que precede as poderosas manifestações da luz no íntimo dos corações, ela recebe o bloco de mármore bruto e lhe trabalha as asperezas para que a obra do amor surja, em sua pureza divina. João Batista foi a voz clamante do deserto. Operário da primeira hora, é ele o símbolo rude da verdade que arranca as mais fortes raízes do mundo, para que o reino de Deus prevaleça nos corações. Exprimindo a austera disciplina que antecede a espontaneidade do amor, a luta para que se desfaçam as sombras do caminho, João é o primeiro sinal de que a conquista da liberdade, para todas as almas, jamais se pode realizar sem o sacrifício e sem o martírio.</p>`
+  },
   { id:'lucas', nome:'Lucas', ep:'O Evangelista', epíteto:'Médico e historiador dos gentios',
     origem:{cidade:'Antioquia', regiao:'Síria'},
     death:'natural', deathplace:'beocia',
@@ -2533,6 +2582,15 @@ const EV=[
 ];
 
 const EV_BIBLIA={
+  batista:[
+    {ref:'Lucas 1:5-25', t:'Anúncio a Zacarias: João será "grande diante do Senhor" e "preparará um povo bem disposto".'},
+    {ref:'Lucas 1:57-80', t:'Nascimento de João; o cântico de Zacarias: "Tu, menino, serás chamado profeta do Altíssimo."'},
+    {ref:'Mateus 3:1-12', t:'João prega no deserto da Judeia: "Arrependei-vos, porque o reino dos céus está próximo!"'},
+    {ref:'Mateus 3:13-17', t:'João batiza Jesus no Jordão; o Espírito Santo desce como pomba e o Pai proclama: "Este é meu Filho amado."'},
+    {ref:'João 1:29', t:'"Eis o Cordeiro de Deus, que tira o pecado do mundo!" — João aponta Jesus ao ver o Espírito descer.'},
+    {ref:'Mateus 11:11', t:'"Entre os nascidos de mulher, nenhum surgiu maior do que João Batista."'},
+    {ref:'Marcos 6:17-29', t:'João, preso por denunciar Herodes; Salomé dança e exige sua cabeça — o precursor é decapitado.'},
+  ],
   lucas:[
     {ref:'Colossenses 4:14', t:'"Lucas, o médico amado, vos saúda."'},
     {ref:'2 Timóteo 4:11', t:'"Só Lucas está comigo."'},
