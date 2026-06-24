@@ -89,19 +89,20 @@
     );
     opacity:.85;
   }
-  .topbar{display:flex;align-items:flex-start;gap:12px;height:62px;padding-top:0;}
-  .brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#E8D4A0;flex-shrink:0;align-self:center;}
+  .topbar{display:flex;align-items:center;gap:12px;height:62px;}
+  .brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#E8D4A0;flex-shrink:0;}
   .brand .seal{flex-shrink:0;}
   .brand .bt{display:flex;flex-direction:column;line-height:1;}
   .brand .bt b{font-family:'Cinzel',serif;font-size:1.14rem;font-weight:600;letter-spacing:.06em;color:#F2E4B8;}
   .brand .bt span{font-size:1.14rem;letter-spacing:.06em;text-transform:none;color:var(--ouro-claro);margin-top:2px;font-family:'Cinzel',serif;font-weight:600;}
-  .topnav{margin-left:auto;display:flex;gap:0;flex-wrap:nowrap;align-items:flex-start;align-self:stretch;}
+  .topnav{margin-left:auto;display:flex;gap:4px;flex-wrap:nowrap;align-items:center;}
   .topnav a{
-    text-decoration:none;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;
-    color:#C8A86B;padding:8px 8px 0;border-radius:3px 3px 0 0;transition:.18s;font-family:'Cinzel',serif;font-weight:400;
-    border:1px solid transparent;border-bottom:none;white-space:nowrap;display:flex;align-items:flex-start;
+    flex-shrink:0;text-decoration:none;cursor:pointer;
+    font-family:'Cinzel',serif;font-size:.78rem;color:#C8A86B;
+    padding:5px 12px;white-space:nowrap;transition:.16s;
+    border:1px solid transparent;border-radius:2px;letter-spacing:.08em;
   }
-  .topnav a:hover,.topnav a.on{color:#F2E4B8;background:rgba(196,148,58,.15);border-color:rgba(196,148,58,.3);}
+  .topnav a:hover,.topnav a.on{color:#1E1608;background:var(--ouro-claro);border-color:var(--ouro);}
   .burger{display:none;margin-left:auto;background:none;border:1px solid rgba(196,148,58,.4);color:#E8D4A0;border-radius:3px;padding:7px 10px;font-size:1rem;cursor:pointer;}
   .apbar-wrap{background:rgba(0,0,0,.25);border-top:1px solid rgba(196,148,58,.2);border-bottom:1px solid rgba(196,148,58,.1);}
   .apbar{display:flex;gap:4px;overflow-x:auto;padding:7px 0;scrollbar-width:thin;}
