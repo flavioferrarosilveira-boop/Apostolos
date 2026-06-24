@@ -10,24 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --pedra:#0D1A2E;          /* azul-noite profundo */
-    --pedra-2:#162540;
+    --pedra:#E8F0FF;          /* texto principal claro */
+    --pedra-2:#C8D8F0;
     --ouro:#C8A86B;           /* ouro espírita */
     --ouro-claro:#D4B87A;
-    --oliva:#2A5C8A;          /* azul-índigo */
+    --oliva:#7AACDC;          /* azul-médio claro */
     --papiro:#E8F0F8;         /* branco-azulado suave */
     --papiro-2:#D8E4F0;
     --argila:#F0F4FA;         /* fundo cartão claro */
-    --tinta:#0D1A2E;          /* texto escuro */
+    --tinta:#0D1A2E;          /* texto escuro (dentro de cards claros) */
     --tinta-suave:#2A4060;
-    --terracota:#4A7AAA;      /* azul-médio */
+    --terracota:#7AACDC;      /* azul-claro */
     --areia:#C8A86B;          /* ouro */
-    --linha:#7A9CC0;
+    --linha:#4A7AAA;
     --lapis:#1B3A6B;
     --lapis-2:#2A5090;
-    --mar:#2A5C8A;
-    --sombra:0 2px 4px rgba(13,26,46,.18), 0 8px 28px rgba(13,26,46,.15);
-    --sombra-pedra:inset 0 1px 0 rgba(255,255,255,.15), inset 0 -2px 0 rgba(0,0,0,.2), 0 4px 12px rgba(13,26,46,.25);
+    --mar:#7AACDC;
+    --sombra:0 2px 4px rgba(13,26,46,.35), 0 8px 28px rgba(13,26,46,.3);
+    --sombra-pedra:inset 0 1px 0 rgba(255,255,255,.15), inset 0 -2px 0 rgba(0,0,0,.2), 0 4px 12px rgba(13,26,46,.4);
     --maxw:1080px;
   }
   /* ── contenção global de overflow ── */
@@ -39,7 +39,7 @@
   body{
     margin:0;
     font-family:'IM Fell English',Georgia,serif;
-    color:var(--tinta);
+    color:#D8E8F8;
     background-color:#0D1A2E;
     background-image:
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
