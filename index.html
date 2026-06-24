@@ -67,7 +67,7 @@
 
   /* ====== HEADER / TEMPLO ====== */
   header.site{
-    position:sticky;top:0;z-index:50;
+    position:fixed;top:0;left:0;right:0;z-index:50;
     background:
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E"),
       linear-gradient(180deg,#2A1E08 0%,#1E1608 100%);
@@ -117,7 +117,7 @@
   .chip.on{color:#1E1608;background:var(--ouro-claro);border-color:var(--ouro);}
 
   /* ====== VIEWS ====== */
-  main{min-height:60vh;}
+  main{min-height:60vh;padding-top:75px;}
   .view{display:none;animation:rise .5s ease both;}
   .view.active{display:block;}
   @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
