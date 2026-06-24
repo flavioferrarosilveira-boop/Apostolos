@@ -7,7 +7,7 @@
 <title>Síntese dos Apóstolos segundo o Espiritismo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
     --pedra:#2C2010;          /* pedra escura */
@@ -285,6 +285,21 @@
   .scroll-text .src{text-align:center;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro);margin:6px 0 22px;}
   .scroll-text p{margin:0 0 16px;text-align:justify;}
   .scroll-text p:first-of-type::first-letter{font-family:'Cinzel Decorative',serif;font-size:3.8rem;line-height:.78;float:left;color:var(--terracota);padding:6px 10px 0 0;font-weight:700;text-shadow:1px 1px 0 rgba(0,0,0,.12);}
+
+  /* ── Boa Nova ────────────────────────────────────────────── */
+  .boanava-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px;}
+  .boanava-aramaic{font-family:'Noto Serif',serif;direction:ltr;font-size:1.15rem;letter-spacing:.04em;line-height:1.9;color:var(--tinta);}
+  .boanava-aramaic p{margin:0 0 1.35em;text-align:justify;}
+  .boanava-aramaic p.section-break{text-align:center;letter-spacing:.35em;color:var(--ouro);font-size:.9rem;margin:2em 0;}
+  .boanava-aramaic p.lede-para{font-size:1.22rem;font-style:italic;}
+  .boanava-aramaic p.short{text-align:center;font-style:italic;}
+  .boanava-aramaic .boanava-src{text-align:center;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro);margin:0 0 2.2em;font-family:'Cinzel',serif;}
+  .boanava-aramaic p.boanava-dropcap::first-letter{font-family:'Cinzel Decorative',serif;font-size:4rem;line-height:.78;float:left;color:var(--terracota);padding:6px 10px 0 0;font-weight:700;}
+  .boanava-title{text-align:center;margin-bottom:2.5rem;}
+  .boanava-title .num{font-family:'Noto Serif',serif;font-size:2.5rem;color:var(--ouro);display:block;letter-spacing:.12em;margin-bottom:.3rem;}
+  .boanava-title h2{font-family:'Cinzel',serif;font-size:2rem;letter-spacing:.08em;color:var(--tinta);}
+  .boanava-title .aramsub{font-family:'Noto Serif',serif;font-size:1.1rem;color:var(--ouro);opacity:.7;display:block;margin-top:.5rem;letter-spacing:.06em;}
+  .boanava-title .aram{font-family:'Noto Serif',serif;font-size:1.5rem;color:var(--ouro);opacity:.55;display:block;margin-top:.4rem;direction:rtl;letter-spacing:.04em;}
   .dialog{color:var(--pedra-2);}
 
   .backlink{display:inline-flex;align-items:center;gap:8px;margin-top:36px;text-decoration:none;font-family:'Cinzel';font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;color:var(--mar);cursor:pointer;}
@@ -688,6 +703,7 @@
     <button class="burger" aria-label="Menu" id="burger">☰</button>
     <nav class="topnav" id="topnav">
       <a href="#inicio" data-nav>Início</a>
+      <a href="#boanava" data-nav>Boa Nova</a>
       <a href="#historia" data-nav>História</a>
       <a href="#origens" data-nav>Origens</a>
       <a href="#doze" data-nav>Os Doze</a>
@@ -2840,6 +2856,76 @@ function evangelistasView(){
 /* =========================================================
    ROTEADOR
 ========================================================= */
+function boanovaView(){
+  return `
+  <section class="block" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="boanava-wrap">
+        <div class="boanava-title">
+          <span class="num">1</span>
+          <h2>As Boas-Novas</h2>
+          <span class="aramsub">Primícias do Reino · cap. 1</span>
+          <span class="aram">ܒܣܝܡܘܬ ܒܫܘܪܬܐ</span>
+        </div>
+        <p class="boanava-src">Primícias do Reino — cap. 1 · Amélia Rodrigues / Divaldo Franco</p>
+        <div class="boanava-aramaic">
+<p class="boanava-dropcap lede-para">O mergulho de Jesus nos fluidos grosseiros do orbe terráqueo é a história da redenção da própria Humanidade, que sai das furnas do "eu" para os altos píncaros da liberdade.</p>
+<p>Vivendo os reinados de Augusto e Tibério, cujas vidas assinalaram com vigor inusitado a História, o Seu berço e o Seu túmulo marcaram, indelevelmente, os tempos e constituíram sinal divisório da Civilização, acontecimento predominante nos fastos da vida humana.</p>
+<p>Aceitando como berço o reduto humílimo de uma estrebaria, no momento significativo de um censo, elaborou, desde o primeiro momento, a profunda lição da humildade para inaugurar um <em>reinado diferente</em> entre as criaturas, no justo momento em que a supremacia da força entronizava o gládio e a púrpura atapetava o solo, alcatifando o piso por onde passavam os triunfadores.</p>
+<p>E não se afastou, jamais, da diretriz inicial assumida: a de servo de todos.</p>
+<p>Acompanhando a marcha tresloucada do espírito humano, que se encontra atado aos sucessivos ciclos dos renascimentos inferiores, na roda das paixões escravizantes, fez que pioneiros e embaixadores da Sua Morada O precedessem a cantar as glórias superiores da vida e do belo, para propiciar os sonhos de elevação e as ânsias sublimantes...</p>
+<p class="section-break">∞</p>
+<p>Antes d'Ele,</p>
+<p>Hamurabi amplia os limites do seu país, em guerras cruéis e inscreve em estelas de pedras um código, que é o primeiro de que a humanidade tem notícia...</p>
+<p>Krishna renova a doutrina dos Vedas, doutrina cujas origens se perdem no ignoto dos séculos, e prega a imortalidade dos Espíritos e as vidas sucessivas...</p>
+<p>Akhenaton introduz reformas expressivas na idolatria egípcia, inspirado por excelsos pensamentos...</p>
+<p>Abraão, ligado psiquicamente ao mundo espiritual, deixa a cidade de Ur e se torna pai de um povo...</p>
+<p>Moisés, em comunhão com os Espíritos superiores, liberta os hebreus do cativeiro, <em>recebe o Decálogo</em> e traz ao mundo o conhecimento do <em>Deus Único</em>.</p>
+<p>Siddhartha Gautama propõe-se à conquista do Paraíso e ilumina-se, clareando a Terra com as incomparáveis lições da renúncia a si mesmo, da paz e da concórdia.</p>
+<p>Kung-Fu-Tsé (Confúcio) legisla moral, fidelidade, família e renova os conceitos sobre a vida...</p>
+<p>Lao-Tsé compõe com a experiência e as renúncias, por meio de meditações profundas, o <em>Livro da Vida e da Virtude</em>...</p>
+<p>Pitágoras, na sua admirável Academia de Crotona, após iniciação complexa, preconiza moral elevada, austeridade, pregando a doutrina dos renascimentos...</p>
+<p>Sócrates sintetiza as ideias do Oriente e inicia o período da Filosofia nobre, alicerçada na mais elevada moral e na imortalidade da alma...</p>
+<p>... E outros biótipos desfilam, triunfantes uns e aniquilados muitos, ampliando os horizontes da Terra para a chegada d'Ele...</p>
+<p>... Alcibíades canta as Musas e fomenta a guerra; Marco Aurélio regista os pensamentos que fluem da mente privilegiada sob elevada inspiração de Emissários Sábios, enquanto peleja nos campos juncados de cadáveres...</p>
+<p>Periandro se eleva à categoria de um dos sete sábios da Grécia e comete uxoricídio ignominioso...</p>
+<p>Júlio César atrela aos pulsos o carro da destruição e se alça à condição de divindade...</p>
+<p>Alexandre Magno conquistou o mundo sem conseguir, no entanto, intimidar os <em>gimnossofistas</em>, que habitavam as margens do Indo. Apaixonado por Homero, dizia encontrar na Ilíada inspiração ao amor e à guerra que lhe dava glórias... Logo passou, e aos 33 anos sucumbiu, depois de ter vivido o correspondente a várias vidas...</p>
+<p>Os direitos dos povos pertenciam aos dominadores, e o homem não passava de animal de carga nas garras da força.</p>
+<p class="section-break">∞</p>
+<p>Depois d'Ele, as hostes selvagens, em nome da hegemonia política de vândalos elevados ao poder, irrompem voluptuosas, quais labaredas humanas crepitantes e carbonizadoras, e atrás de suas legiões ficam os destroços, as cinzas, as dores agudíssimas das cidades vencidas e enlutadas...</p>
+<p>Os triunfadores de um dia erigem monumentos à própria insânia, que a soberba qualifica de glória, mas que ruem quando os construtores se consomem...</p>
+<p class="short">(...) Tudo passa! A grande Esfinge tudo devora...</p>
+<p>Tronos refulgentes, sólios esplêndidos, cortes brilhantes ao Sol, conquistas grandiosas, civilizações douradas e impiedosas, os tempos vencem...</p>
+<p class="short">Ele chega silencioso, pulcro, e fica.</p>
+<p class="short">Reúne a malta dos aflitos e os agasalha ao próprio peito.</p>
+<p class="short">Nada solicita, coisa alguma exige.</p>
+<p>Libertador por excelência, canta o hino da verdadeira liberdade, ensinando a destruição dos elos da inferioridade, que imana o homem às mais cruéis cadeias...</p>
+<p>Embosca-se na carne, mas é Sol de incomparável luz, clareando o fulcro dos milênios.</p>
+<p>Ao suave balido da Sua mansa voz, acordam as esperanças e se levantam os ideais esquecidos.</p>
+<p>Ao forte clamor do Seu verbo, erguem-se os dias, e as horas do futuro vibram, aprofundando no cerne do mundo os alicerces da Humanidade Feliz do porvir.</p>
+<p class="short">Admoesta e ajuda.</p>
+<p class="short">Verbera, rigoroso, e socorre.</p>
+<p>Aceita a oferta do amor, mas não enclausura a verdade nas paredes do suborno.</p>
+<p>Rei Celeste, comparte das necessidades dos pecadores e vive entre eles.</p>
+<p>Permuta o contato dos anjos pela comunhão do populacho da verdejante e calma Cafarnaum, trocando os esplendores da Via-Láctea pelas madrugadas rubras do lago piscoso.</p>
+<p>Prefere os entardeceres ardentes de Jericó à epopeia célica dos astros em infinito meio-dia.</p>
+<p>Aceita o pó das estradas ermas e calcinadas de Caná, Magdala, Dalmanuta, e as suas fronteiras que se perdem no Sistema Solar, Ele as estreita entre o Mar e o Hebron, entre a Síria e o país de Moab.</p>
+<p>Deixa a gleba paradisíaca para tomar de um grão de mostarda e elaborar com ele uma cantata, sofrendo calor asfixiante; esfaimado, pede a uma figueira frutos que, fora de época, ela não os pode dar...</p>
+<p class="section-break">∞</p>
+<p>Senhor do Mundo, Causa anterior existente, deixa-se confundir na turba, na multidão esfarrapada, que em fúria busca o amor sem saber identificá-lo; na multidão, sim, na qual, sofrendo, encontra a razão do seu glorioso martírio.</p>
+<p>Entre os sofredores, canta as mais eloquentes expressões que o homem jamais ouviu.</p>
+<p>As Suas Boas-novas são orquestradas pela musicalidade espontânea da Natureza, no cenário das primaveras e dos verões, entre as aldeias e o lago, no coração exuberante da Terra em crescimento...</p>
+<p>E traído, magoado, encarcerado, <em>vencido</em> numa Cruz, elege uma tranquila e luminosa manhã para ressurgir, buscando uma antiga obsidiada para dizer-lhe que a vida não cessa, e que o Reino de Deus está dentro do coração, reafirmando, insofismável, ficar "conosco todos os dias até o fim do Mundo", retornando, assim, ao Pai, onde nos espera, vencidas as refregas libertadoras da ascese em que hoje nos empenhamos com sofreguidão.</p>
+        </div>
+        <div style="text-align:center;margin-top:48px">
+          <a class="backlink" data-nav href="#inicio">← Início</a>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
 function render(hash){
   hash = (hash||'').replace('#','') || 'inicio';
   let html='';
@@ -2853,6 +2939,7 @@ function render(hash){
   else if(hash==='pregacao') html=pregacaoView();
   else if(hash==='circulos') html=circulosView();
   else if(hash==='autores') html=autoresView();
+  else if(hash==='boanava') html=boanovaView();
   else if(hash==='evangelistas') html=evangelistasView();
   else if(hash.startsWith('ev-')){
     const e=EV.find(x=>x.id===hash.slice(3));
