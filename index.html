@@ -388,6 +388,19 @@
   .autor-nota{background:rgba(196,148,58,.08);border-left:3px solid var(--ouro);padding:12px 16px;margin:8px 0 16px;font-size:.88rem;font-style:italic;color:#3A2E1A;border-radius:0 3px 3px 0;}
   .src-ref{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro);margin-top:4px;}
   .src-ref a{color:var(--ouro);text-decoration:underline;text-underline-offset:3px;}
+  /* bibliografia */
+  .biblio-section{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(196,148,58,.25);}
+  .biblio-title{font-size:1.4rem;color:var(--ouro);margin-bottom:.3rem;font-family:var(--serif);}
+  .biblio-sub{font-size:.85rem;color:#888;margin-bottom:1.5rem;letter-spacing:.05em;}
+  .biblio-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  .biblio-col h4{font-size:.95rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ouro);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid rgba(196,148,58,.2);}
+  .biblio-table{width:100%;border-collapse:collapse;font-size:.88rem;}
+  .biblio-table thead tr{background:rgba(196,148,58,.1);}
+  .biblio-table th{text-align:left;padding:7px 10px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ouro);font-weight:600;}
+  .biblio-table td{padding:7px 10px;border-bottom:1px solid rgba(196,148,58,.08);vertical-align:top;}
+  .biblio-table tr:last-child td{border-bottom:none;}
+  .biblio-table tr:hover td{background:rgba(196,148,58,.05);}
+  .biblio-caps{font-size:.8em;color:#888;}
 
   /* ====== EVANGELISTAS ====== */
   .ev-card{display:grid;grid-template-columns:260px 1fr;gap:0;background:var(--argila);border:1px solid var(--areia);border-radius:4px;box-shadow:var(--sombra-pedra);margin-bottom:32px;overflow:hidden;}
@@ -568,6 +581,7 @@
     .autor-body{padding:18px 16px;}
     .autor-body h3{font-size:1rem;}
     .autor-body p{font-size:.92rem;}
+    .biblio-grid{grid-template-columns:1fr;}
     /* evangelistas 680 */
     .ev-card{grid-template-columns:1fr;}
     .ev-aside{flex-direction:row;flex-wrap:wrap;padding:18px 16px;gap:12px;align-items:flex-start;border-right:none;border-bottom:1px solid var(--ouro);}
@@ -717,7 +731,7 @@
       <a href="#martirios" data-nav>Martírios</a>
       <a href="#pregacao" data-nav>Pregação</a>
       <a href="#circulos" data-nav>Contexto</a>
-      <a href="#autores" data-nav>Autores</a>
+      <a href="#autores" data-nav>Autores e Bibliografias</a>
     </nav>
   </div>
   <div class="apbar-wrap">
@@ -2477,10 +2491,48 @@ function autoresView(){
   return `<section class="block"><div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Médiuns e Espíritos Autores · Espiritismo Brasileiro</span>
-      <h2>Autores Espirituais</h2>
+      <h2>Autores e Bibliografias</h2>
       <p>As principais obras que fundamentam este estudo foram ditadas por espíritos que, após o desencarne, continuaram sua missão evangelizadora pela mediunidade de dois dos maiores médiuns do Brasil.</p>
     </div>
     ${cards}
+    <div class="biblio-section">
+      <h3 class="biblio-title">Bibliografia</h3>
+      <p class="biblio-sub">Obras citadas neste estudo, por ordem alfabética</p>
+      <div class="biblio-grid">
+        <div class="biblio-col">
+          <h4>Francisco Cândido Xavier (Chico Xavier)</h4>
+          <table class="biblio-table">
+            <thead><tr><th>Obra</th><th>Espírito Autor</th></tr></thead>
+            <tbody>
+              <tr><td>Antologia Mediúnica do Natal</td><td>—</td></tr>
+              <tr><td>Boa Nova</td><td>Humberto de Campos</td></tr>
+              <tr><td>Crônicas de Além-Túmulo</td><td>Humberto de Campos</td></tr>
+              <tr><td>O Essencial <span class="biblio-caps">(cap. 21 «Holocausto de Amor»)</span></td><td>Emmanuel</td></tr>
+              <tr><td>Paulo e Estêvão</td><td>Emmanuel</td></tr>
+              <tr><td>Pontos e Contos</td><td>Humberto de Campos</td></tr>
+              <tr><td>Vida e Atos dos Apóstolos</td><td>Cairbar Schutel</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="biblio-col">
+          <h4>Divaldo Pereira Franco</h4>
+          <table class="biblio-table">
+            <thead><tr><th>Obra</th><th>Espírito Autor</th></tr></thead>
+            <tbody>
+              <tr><td>A Mensagem do Amor Imortal</td><td>Amélia Rodrigues</td></tr>
+              <tr><td>Há Flores no Caminho</td><td>Amélia Rodrigues</td></tr>
+              <tr><td>Luz do Mundo</td><td>Amélia Rodrigues</td></tr>
+              <tr><td>O Essencial <span class="biblio-caps">(caps. 17, 19, 26)</span></td><td>Amélia Rodrigues</td></tr>
+              <tr><td>Primícias do Reino</td><td>Amélia Rodrigues</td></tr>
+              <tr><td>Quando Voltar a Primavera</td><td>Amélia Rodrigues</td></tr>
+              <tr><td>Série Evangélica</td><td>Amélia Rodrigues</td></tr>
+              <tr><td>Trigo de Deus</td><td>Amélia Rodrigues</td></tr>
+              <tr><td>Vivendo com Jesus</td><td>Amélia Rodrigues</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
     <div style="text-align:center;margin-top:8px"><a class="backlink" data-nav href="#inicio">← Início</a></div>
   </div></section>`;
 }
